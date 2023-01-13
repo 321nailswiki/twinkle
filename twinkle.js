@@ -6,7 +6,7 @@
  * |                           修改前请联系维护者。                            |
  * +-------------------------------------------------------------------------+
  *
- * 从Github导入 [https://github.com/321nailswiki/twinkle] 
+ * 从Github导入 [https://github.com/321nailswiki/twinkle]
  * Original: [https://github.com/Xi-Plus/twinkle]
  * 所有修改都應該在儲存庫中進行，否則將在下次更新時遺失。
  *
@@ -27,7 +27,7 @@ if (
 	// 新增 sysop 组，避免本地组行政员无权访问
 	// 没有增加 bcrat 组的原因是考虑到部分行政员不参与sysop工作
 	!Morebits.userIsInGroup('sysop')
-	) {
+) {
 	return;
 }
 
