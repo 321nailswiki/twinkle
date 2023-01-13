@@ -37,7 +37,8 @@ postData = {
 markedPages = set()
 while True:
     # print(postData)
-    res = requests.post('https://zh.wikipedia.org/w/api.php', data=postData).json()
+    # res = requests.post('https://zh.wikipedia.org/w/api.php', data=postData).json()
+    res = requests.post('https://321nails.crpteam.club/w/api.php', data=postData).json()
     pages = res['query']['pages']
     for pageid in pages:
         page = pages[pageid]
@@ -110,6 +111,8 @@ articleTags = findBetween(jstext, 'Twinkle.tag.fileList = [{', 'Twinkle.tag.call
 matches = re.findall(r"{{(.+?)}}", articleTags)
 for match in matches:
     if re.search(r'重定向$', match):
+        continue
+    if re.search(r'REDIRECT$', match):
         continue
     templates.add(normalizeTitle(match))
 
