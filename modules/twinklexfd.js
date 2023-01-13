@@ -40,9 +40,9 @@ Twinkle.xfd.callback = function twinklexfdCallback() {
 	var Window = new Morebits.simpleWindow(600, 350);
 	Window.setTitle(wgULS('提交存废讨论', '提交存廢討論'));
 	Window.setScriptName('Twinkle');
-	Window.addFooterLink(wgULS('关于存废讨论', '關於存廢討論'), 'WP:XFD');
-	Window.addFooterLink(wgULS('提删设置', '提刪設定'), 'WP:TW/PREF#xfd');
-	Window.addFooterLink(wgULS('Twinkle帮助', 'Twinkle說明'), 'WP:TW/DOC#xfd');
+	Window.addFooterLink(wgULS('关于存废讨论', '關於存廢討論'), 'XFD');
+	Window.addFooterLink(wgULS('提删设置', '提刪設定'), 'TW/PREF#xfd');
+	Window.addFooterLink(wgULS('Twinkle帮助', 'Twinkle說明'), 'TW/DOC#xfd');
 
 	var form = new Morebits.quickForm(Twinkle.xfd.callback.evaluate);
 	var categories = form.append({
@@ -95,7 +95,7 @@ Twinkle.xfd.callback = function twinklexfdCallback() {
 				wgULS('Twinkle不支持在页面内容模型为', 'Twinkle不支援在頁面內容模型為'),
 				mw.config.get('wgPageContentModel'),
 				wgULS('的页面上挂上存废讨论模板，请参见', '的頁面上掛上存廢討論模板，請參見'),
-				$('<a>').attr({ target: '_blank', href: mw.util.getUrl('WP:SPECIALSD') }).text(wgULS('手动放置模板时的注意事项', '手動放置模板時的注意事項'))[0],
+				$('<a>').attr({ target: '_blank', href: mw.util.getUrl('SPECIALSD') }).text(wgULS('手动放置模板时的注意事项', '手動放置模板時的注意事項'))[0],
 				'。'
 			]
 		});
@@ -604,12 +604,12 @@ Twinkle.xfd.callbacks = {
 		var editsummary = wgULS('记录对[[', '記錄對[[') + Morebits.pageNameNorm + wgULS(']]的存废讨论提名', ']]的存廢討論提名');
 		var usl = new Morebits.userspaceLogger(Twinkle.getPref('xfdLogPageName'));
 		usl.initialText =
-			wgULS('这是该用户使用[[WP:TW|Twinkle]]的提删模块做出的[[WP:XFD|存废讨论]]提名列表。\n\n' +
+			wgULS('这是该用户使用[[TW|Twinkle]]的提删模块做出的[[XFD|存废讨论]]提名列表。\n\n' +
 			'如果您不再想保留此日志，请在[[' + Twinkle.getPref('configPage') + '|参数设置]]中关掉，并' +
-			'使用[[WP:CSD#O1|CSD O1]]提交快速删除。',
-			'這是該使用者使用[[WP:TW|Twinkle]]的提刪模塊做出的[[WP:XFD|存廢討論]]提名列表。\n\n' +
+			'使用[[CSD#O1|CSD O1]]提交快速删除。',
+			'這是該使用者使用[[TW|Twinkle]]的提刪模塊做出的[[XFD|存廢討論]]提名列表。\n\n' +
 			'如果您不再想保留此日誌，請在[[' + Twinkle.getPref('configPage') + '|偏好設定]]中關掉，並' +
-			'使用[[WP:CSD#O1|CSD O1]]提交快速刪除。');
+			'使用[[CSD#O1|CSD O1]]提交快速刪除。');
 		var xfdCatName;
 		switch (params.xfdcat) {
 			case 'delete':
@@ -704,7 +704,7 @@ Twinkle.xfd.callback.evaluate = function(e) {
 	var date = new Morebits.date(); // XXX: avoid use of client clock, still used by TfD, FfD and CfD
 	switch (params.category) {
 		case 'afd': // AFD
-			params.logpage = 'Wikipedia:頁面存廢討論/記錄/' + date.format('YYYY/MM/DD', 'utc');
+			params.logpage = 'Project:頁面存廢討論/記錄/' + date.format('YYYY/MM/DD', 'utc');
 			params.lognomination = Twinkle.getPref('logXfdNominations') && Twinkle.getPref('noLogOnXfdNomination').indexOf(params.xfdcat) === -1;
 
 			Morebits.wiki.addCheckpoint();
@@ -724,7 +724,7 @@ Twinkle.xfd.callback.evaluate = function(e) {
 			break;
 
 		case 'ffd': // FFD
-			params.logpage = 'Wikipedia:檔案存廢討論/記錄/' + date.format('YYYY/MM/DD', 'utc');
+			params.logpage = 'Project:檔案存廢討論/記錄/' + date.format('YYYY/MM/DD', 'utc');
 			params.lognomination = Twinkle.getPref('logXfdNominations') && Twinkle.getPref('noLogOnXfdNomination').indexOf('ffd') === -1;
 
 			Morebits.wiki.addCheckpoint();

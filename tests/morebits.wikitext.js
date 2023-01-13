@@ -312,9 +312,9 @@ describe('Morebits.wikitext', () => {
 			{
 				name: 'AltCaps',
 				method: 'removeLink',
-				input: 'O, [[WP:Juliet]] she [[wp:juliet|doth]] {{plural|teach}} [[Romeo|the]] [[wikipedia:Juliet|torches]] [[Wikipedia:juliet]] to burn bright!',
-				expected: 'O, WP:Juliet she doth {{plural|teach}} [[Romeo|the]] torches Wikipedia:juliet to burn bright!',
-				params: ['wikipedia:juliet']
+				input: 'O, [[WP:Juliet]] she [[wp:juliet|doth]] {{plural|teach}} [[Romeo|the]] [[Project:Juliet|torches]] [[Project:juliet]] to burn bright!',
+				expected: 'O, WP:Juliet she doth {{plural|teach}} [[Romeo|the]] torches Project:juliet to burn bright!',
+				params: ['Project:juliet']
 			},
 			{
 				name: 'AltCaps',

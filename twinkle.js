@@ -6,13 +6,14 @@
  * |                           修改前请联系维护者。                            |
  * +-------------------------------------------------------------------------+
  *
- * 从Github导入 [https://github.com/Xi-Plus/twinkle]
+ * 从Github导入 [https://github.com/321nailswiki/twinkle] 
+ * Original: [https://github.com/Xi-Plus/twinkle]
  * 所有修改都應該在儲存庫中進行，否則將在下次更新時遺失。
  *
  * ----------
  *
  * 这是Xiplus版本的Twinkle，是新手、管理员及他们之间的用户的
- * 好帮手。请参见[[WP:TW]]以获取更多信息。
+ * 好帮手。请参见[[PROJ:TW]]以获取更多信息。
  */
 // <nowiki>
 
@@ -21,7 +22,12 @@
 (function (window, document, $) { // Wrap with anonymous function
 
 // Check if account is experienced enough to use Twinkle
-if (!Morebits.userIsInGroup('autoconfirmed') && !Morebits.userIsInGroup('confirmed')) {
+if (
+	!Morebits.userIsInGroup('autoconfirmed') && !Morebits.userIsInGroup('confirmed') &&
+	// 新增 sysop 组，避免本地组行政员无权访问
+	// 没有增加 bcrat 组的原因是考虑到部分行政员不参与sysop工作
+	!Morebits.userIsInGroup('sysop')
+	) {
 	return;
 }
 
@@ -36,7 +42,7 @@ window.Twinkle = Twinkle;  // allow global access
 Twinkle.changeTags = 'Twinkle';
 // Available for actions that don't (yet) support tags
 // currently: FlaggedRevs and PageTriage
-Twinkle.summaryAd = ' ([[WP:TW|TW]])';
+Twinkle.summaryAd = ' ([[PROJ:TW|TW]])';
 
 // Various hatnote templates, used when tagging (csd/xfd/tag/prod/protect) to ensure [[w:en:MOS:ORDER]]
 Twinkle.hatnoteRegex = '(?:Short[ _]description)|(?:Rellink|Hatnote|HAT)|(?:Main|细节|細節|Main[ _]articles|主条目|主條目|Hurricane[ _]main|条目|條目|主|頁面|页面|主頁面|主页面|主頁|主页|主題目|主题目|Main[ _]article|AP)|(?:Wrongtitle|Correct[ _]title)|(?:主条目消歧义|主條目消歧義|消歧义链接|消歧義鏈接|消歧義連結|消连|消連|消歧义连结|DisambLink|Noteref|Dablink)|(?:Distinguish|不是|Not|提示|混淆|分別|分别|區別|区别|本条目的主题不是|本條目的主題不是|本条目主题不是|本條目主題不是|条目主题不是|條目主題不是|主题不是|主題不是|Confused|区分|區分|Confusion|Confuse|RedirectNOT|Misspelling)|(?:Distinguish2|SelfDistinguish|Not2|不是2)|(?:For)|(?:Details|Further|See|另见|另見|More|相關條目|相关条目|Detail|见|見|更多资料|更多資料|Further[ _]information|更多资讯|更多資訊|More[ _]information|更多信息)|(?:Selfref)|(?:About|Otheruses4|关于|關於)|(?:Other[ _]uses|Otheruse|条目消歧义|條目消歧義|他用|Otheruses)|(?:Other[ _]uses list|Otheruselist|主條目消歧義列表|主条目消歧义列表|Otheruseslist|Aboutlist|About[ _]list|Otheruses[ _]list)|(?:Redirect|重定向至此|Redirects[ _]here|Redirect[ _]to)|(?:Redirect2|主條目消歧義2|主条目消歧义2|Redir|重定向至此2)|(?:Redirect3)|(?:Redirect4)|(?:Redirect-distinguish)|(?:Redirect-synonym)|(?:Redirect-multi)|(?:See[ _]Wiktionary|Seewikt)|(?:Seealso|参看|參看|See[ _]also|参见|參見|Also)|(?:See[ _]also2|Seealso2|不轉換參見|不转换参见)|(?:Other[ _]places)|(?:Contrast|對比|对比)';
@@ -143,7 +149,7 @@ Twinkle.defaultConfig = {
 	markXfdPagesAsPatrolled: true,
 	FwdCsdToXfd: Morebits.userIsSysop,
 	afdDefaultCategory: 'delete',
-	afdFameDefaultReason: '沒有足夠的可靠資料來源能夠讓這個條目符合[[Wikipedia:關注度]]中的標準',
+	afdFameDefaultReason: '沒有足夠的可靠資料來源能夠讓這個條目符合[[Project:關注度]]中的標準',
 	afdSubstubDefaultReason: '過期小小作品',
 	XfdClose: Morebits.userIsSysop ? 'all' : 'hide',
 
@@ -157,15 +163,15 @@ Twinkle.defaultConfig = {
 	revertMaxRevisions: 50, // intentionally limited
 	batchMax: 5000,
 	batchChunks: 50,
-	configPage: 'Wikipedia:Twinkle/参数设置',
+	configPage: '红砖维基:Twinkle/参数设置', // 'Project:Twinkle/参数设置',
 	projectNamespaceName: mw.config.get('wgFormattedNamespaces')[4],
-	sandboxPage: 'Wikipedia:沙盒',
+	sandboxPage: 'Project:沙盒',
 
 	// Deprecated options, as a fallback for add-on scripts/modules
-	summaryAd: ' ([[WP:TW|TW]])',
-	deletionSummaryAd: ' ([[WP:TW|TW]])',
-	protectionSummaryAd: ' ([[WP:TW|TW]])',
-	blockSummaryAd: ' ([[WP:TW|TW]])',
+	summaryAd: ' ([[PROJ:TW|TW]])',
+	deletionSummaryAd: ' ([[PROJ:TW|TW]])',
+	protectionSummaryAd: ' ([[PROJ:TW|TW]])',
+	blockSummaryAd: ' ([[PROJ:TW|TW]])',
 
 	// Formerly defaultConfig.friendly:
 	// Tag

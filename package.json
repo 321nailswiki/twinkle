@@ -2,7 +2,7 @@
 	"title": "Twinkle",
 	"name": "twinkle",
 	"private": true,
-	"repository": "Xi-Plus/twinkle",
+	"repository": "321nailswiki/twinkle",
 	"scripts": {
 		"lint": "eslint .",
 		"lint:fix": "eslint . --fix",

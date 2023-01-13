@@ -32,9 +32,9 @@ Twinkle.copyvio.callback = function twinklecopyvioCallback() {
 	var Window = new Morebits.simpleWindow(600, 350);
 	Window.setTitle(wgULS('提报侵权页面', '提報侵權頁面'));
 	Window.setScriptName('Twinkle');
-	Window.addFooterLink(wgULS('常见错误', '常見錯誤'), 'Wikipedia:管理员错误自查表/侵权处理');
-	Window.addFooterLink(wgULS('侵权设置', '侵權設定'), 'WP:TW/PREF#copyvio');
-	Window.addFooterLink(wgULS('Twinkle帮助', 'Twinkle說明'), 'WP:TW/DOC#copyvio');
+	Window.addFooterLink(wgULS('常见错误', '常見錯誤'), 'Project:管理员错误自查表/侵权处理');
+	Window.addFooterLink(wgULS('侵权设置', '侵權設定'), 'TW/PREF#copyvio');
+	Window.addFooterLink(wgULS('Twinkle帮助', 'Twinkle說明'), 'TW/DOC#copyvio');
 
 	var form = new Morebits.quickForm(Twinkle.copyvio.callback.evaluate);
 	form.append({
@@ -210,7 +210,7 @@ Twinkle.copyvio.callback.evaluate = function(e) {
 	Morebits.simpleWindow.setButtonsEnabled(false);
 	Morebits.status.init(e.target);
 
-	params.logpage = 'Wikipedia:頁面存廢討論/疑似侵權';
+	params.logpage = 'Project:頁面存廢討論/疑似侵權';
 
 	Morebits.wiki.addCheckpoint();
 	// Updating data for the action completed event

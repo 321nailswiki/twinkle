@@ -8,13 +8,13 @@
  ****************************************
  *** twinkleconfig.js: Preferences module
  ****************************************
- * Mode of invocation:     Adds configuration form to Wikipedia:Twinkle/Preferences,
+ * Mode of invocation:     Adds configuration form to Project:Twinkle/Preferences,
                            and adds an ad box to the top of user subpages belonging to the
                            currently logged-in user which end in '.js'
  * Active on:              What I just said.  Yeah.
 
  I, [[User:This, that and the other]], originally wrote this.  If the code is misbehaving, or you have any
- questions, don't hesitate to ask me.  (This doesn't at all imply [[WP:OWN]]ership - it's just meant to
+ questions, don't hesitate to ask me.  (This doesn't at all imply [[OWN]]ership - it's just meant to
  point you in the right direction.)  -- TTO
  */
 
@@ -99,8 +99,8 @@ Twinkle.config.commonSets = {
 		1: 'Talk',
 		2: 'User',
 		3: 'User talk',
-		4: 'Wikipedia',
-		5: 'Wikipedia talk',
+		4: 'Project',
+		5: 'Project talk',
 		6: 'File',
 		7: 'File talk',
 		8: 'MediaWiki',
@@ -119,6 +119,7 @@ Twinkle.config.commonSets = {
 		119: 'Draft talk',
 		828: 'Module',
 		829: 'Module talk'
+
 	}
 };
 
@@ -910,7 +911,7 @@ Twinkle.config.sections = [
 			{
 				name: 'FwdCsdToXfd',
 				label: wgULS('提删类型增加转交自快速删除候选', '提刪類別增加轉交自快速刪除候選'),
-				helptip: wgULS('请确保您充分了解[[Wikipedia:快速删除方针]]才开启此功能。', '請確保您充分了解[[Wikipedia:快速刪除方針]]才開啟此功能。'),
+				helptip: wgULS('请确保您充分了解[[Project:快速删除方针]]才开启此功能。', '請確保您充分了解[[Project:快速刪除方針]]才開啟此功能。'),
 				type: 'boolean'
 			},
 
@@ -946,7 +947,7 @@ Twinkle.config.sections = [
 			{
 				name: 'XfdClose',
 				label: wgULS('在存废讨论显示关闭讨论按钮', '在存廢討論顯示關閉討論按鈕'),
-				helptip: wgULS('请确保您充分了解[[Wikipedia:关闭存废讨论指引]]才开启此功能。', '請確保您充分了解[[Wikipedia:關閉存廢討論指引]]才開啟此功能。'),
+				helptip: wgULS('请确保您充分了解[[Project:关闭存废讨论指引]]才开启此功能。', '請確保您充分了解[[Project:關閉存廢討論指引]]才開啟此功能。'),
 				type: 'enum',
 				enumValues: { hide: wgULS('不显示', '不顯示'), nonadminonly: wgULS('只包含非管理员可使用选项', '只包含非管理員可使用選項'), all: wgULS('显示所有选项', '顯示所有選項') }
 			}
@@ -1852,7 +1853,7 @@ Twinkle.config.saveSuccess = function twinkleconfigSaveSuccess(pageobj) {
 	noticebox.className = 'mw-message-box mw-message-box-success';
 	noticebox.style.fontSize = '100%';
 	noticebox.style.marginTop = '2em';
-	noticebox.innerHTML = '<p><b>' + wgULS('您的Twinkle参数设置已被保存。', '您的Twinkle偏好設定已被儲存。') + '</b></p><p>' + wgULS('要看到这些更改，您可能需要', '要看到這些更改，您可能需要') + '<a href="' + mw.util.getUrl('WP:BYPASS') + '" title="WP:BYPASS"><b>' + wgULS('绕过浏览器缓存', '繞過瀏覽器快取') + '</b></a>。</p>';
+	noticebox.innerHTML = '<p><b>' + wgULS('您的Twinkle参数设置已被保存。', '您的Twinkle偏好設定已被儲存。') + '</b></p><p>' + wgULS('要看到这些更改，您可能需要', '要看到這些更改，您可能需要') + '<a href="' + mw.util.getUrl('BYPASS') + '" title="BYPASS"><b>' + wgULS('绕过浏览器缓存', '繞過瀏覽器快取') + '</b></a>。</p>';
 	Morebits.status.root.appendChild(noticebox);
 	var noticeclear = document.createElement('br');
 	noticeclear.style.clear = 'both';

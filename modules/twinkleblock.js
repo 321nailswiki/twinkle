@@ -44,10 +44,10 @@ Twinkle.block.callback = function twinkleblockCallback() {
 	// need to be verbose about who we're blocking
 	Window.setTitle(wgULS('封禁或向', '封鎖或向') + relevantUserName + wgULS('发出封禁模板', '發出封鎖模板'));
 	Window.setScriptName('Twinkle');
-	Window.addFooterLink('封禁模板', 'Wikipedia:模板消息/用戶討論命名空間#封禁');
-	Window.addFooterLink(wgULS('封禁方针', '封鎖方針'), 'WP:BLOCK');
-	Window.addFooterLink(wgULS('封禁设置', '封鎖設定'), 'WP:TW/PREF#block');
-	Window.addFooterLink(wgULS('Twinkle帮助', 'Twinkle說明'), 'WP:TW/DOC#block');
+	Window.addFooterLink('封禁模板', 'Project:模板消息/用戶討論命名空間#封禁');
+	Window.addFooterLink(wgULS('封禁方针', '封鎖方針'), 'PROJ:BLOCK');
+	Window.addFooterLink(wgULS('封禁设置', '封鎖設定'), 'PROJ:TW/PREF#block');
+	Window.addFooterLink(wgULS('Twinkle帮助', 'Twinkle說明'), 'PROJ:TW/DOC#block');
 
 	var form = new Morebits.quickForm(Twinkle.block.callback.evaluate);
 	var actionfield = form.append({
@@ -106,7 +106,7 @@ Twinkle.block.callback = function twinkleblockCallback() {
 
 	/*
 	  Add option for IPv6 ranges smaller than /64 to upgrade to the 64
-	  CIDR ([[WP:/64]]).  This is one of the few places where we want
+	  CIDR ([[PROJ:/64]]).  This is one of the few places where we want
 	  wgRelevantUserName since this depends entirely on the original user.
 	  In theory, we shouldn't use Morebits.ip.get64 here since since we want
 	  to exclude functionally-equivalent /64s.  That'd be:
@@ -126,7 +126,7 @@ Twinkle.block.callback = function twinkleblockCallback() {
 		block64field.append({
 			type: 'div',
 			style: 'margin-bottom: 0.5em',
-			label: [$.parseHTML('<a target="_blank" href="' + mw.util.getUrl('en:WP:/64') + '">' + wgULS('直接封禁/64段', '直接封鎖/64段') + '</a>')[0], '（',
+			label: [$.parseHTML('<a target="_blank" href="' + mw.util.getUrl('en:PROJ:/64') + '">' + wgULS('直接封禁/64段', '直接封鎖/64段') + '</a>')[0], '（',
 				$.parseHTML('<a target="_blank" href="' + mw.util.getUrl('Special:Contributions/' + sixtyFour) + '">' + sixtyFour + '</a>)')[0], wgULS('）有益无害。', '）有益無害。')]
 		});
 		block64field.append({
@@ -1075,8 +1075,8 @@ Twinkle.block.blockPresetsInfo = {
 		expiry: '1 day',
 		nocreate: true,
 		pageParam: true,
-		reason: wgULS('违反[[WP:3RR|回退不过三原则]]', '違反[[WP:3RR|回退不過三原則]]'),
-		summary: wgULS('封禁通知：违反[[WP:3RR|回退不过三原则]]', '封鎖通知：違反[[WP:3RR|回退不過三原則]]')
+		reason: wgULS('违反[[PROJ:3RR|回退不过三原则]]', '違反[[PROJ:3RR|回退不過三原則]]'),
+		summary: wgULS('封禁通知：违反[[PROJ:3RR|回退不过三原则]]', '封鎖通知：違反[[PROJ:3RR|回退不過三原則]]')
 	},
 	'uw-ablock': {
 		autoblock: true,
@@ -1092,8 +1092,8 @@ Twinkle.block.blockPresetsInfo = {
 		autoblock: true,
 		nocreate: true,
 		pageParam: true,
-		reason: wgULS('[[WP:SOAP|散发广告/宣传]]', '[[WP:SOAP|散發廣告/宣傳]]'),
-		summary: wgULS('封禁通知：散发[[WP:SOAP|散发广告/宣传]]', '封鎖通知：散發[[WP:SOAP|散發廣告/宣傳]]'),
+		reason: wgULS('[[PROJ:SOAP|散发广告/宣传]]', '[[PROJ:SOAP|散發廣告/宣傳]]'),
+		summary: wgULS('封禁通知：散发[[PROJ:SOAP|散发广告/宣传]]', '封鎖通知：散發[[PROJ:SOAP|散發廣告/宣傳]]'),
 		templateName: 'uw-block'
 	},
 	'uw-block': {
@@ -1128,8 +1128,8 @@ Twinkle.block.blockPresetsInfo = {
 		expiry: 'infinity',
 		nocreate: true,
 		pageParam: true,
-		reason: wgULS('多次加入[[WP:COPYVIO|侵犯著作权]]的内容', '多次加入[[WP:COPYVIO|侵犯著作權]]的內容'),
-		summary: wgULS('封禁通知：持续[[WP:COPYVIO|侵犯著作权]]', '封鎖通知：持續[[WP:COPYVIO|侵犯著作權]]'),
+		reason: wgULS('多次加入[[PROJ:COPYVIO|侵犯著作权]]的内容', '多次加入[[PROJ:COPYVIO|侵犯著作權]]的內容'),
+		summary: wgULS('封禁通知：持续[[PROJ:COPYVIO|侵犯著作权]]', '封鎖通知：持續[[PROJ:COPYVIO|侵犯著作權]]'),
 		templateName: 'uw-blockindef'
 	},
 	'uw-dblock': {
@@ -1137,37 +1137,37 @@ Twinkle.block.blockPresetsInfo = {
 		nocreate: true,
 		reason: wgULS('持续无故删除内容', '持續無故刪除內容'),
 		pageParam: true,
-		summary: wgULS('封禁通知：持续[[WP:VAN|删除内容]]', '封鎖通知：持續[[WP:VAN|刪除內容]]')
+		summary: wgULS('封禁通知：持续[[PROJ:VAN|删除内容]]', '封鎖通知：持續[[PROJ:VAN|刪除內容]]')
 	},
 	'uw-hblock': {
 		autoblock: true,
 		nocreate: true,
 		pageParam: true,
-		reason: wgULS('[[WP:骚扰|骚扰用户]]', '[[WP:騷擾|騷擾使用者]]'),
-		summary: wgULS('封禁通知：[[WP:骚扰|骚扰]]其他用户', '封鎖通知：[[WP:騷擾|騷擾]]其他使用者'),
+		reason: wgULS('[[PROJ:骚扰|骚扰用户]]', '[[PROJ:騷擾|騷擾使用者]]'),
+		summary: wgULS('封禁通知：[[PROJ:骚扰|骚扰]]其他用户', '封鎖通知：[[PROJ:騷擾|騷擾]]其他使用者'),
 		templateName: 'uw-block'
 	},
 	'uw-npblock': {
 		autoblock: true,
 		nocreate: true,
 		pageParam: true,
-		reason: wgULS('[[WP:VAN|在条目中增加无意义文字]]', '[[WP:VAN|在條目中增加無意義文字]]'),
-		summary: wgULS('封禁通知：[[WP:VAN|在条目中增加无意义文字]]', '封鎖通知：[[WP:VAN|在條目中增加無意義文字]]'),
+		reason: wgULS('[[PROJ:VAN|在条目中增加无意义文字]]', '[[PROJ:VAN|在條目中增加無意義文字]]'),
+		summary: wgULS('封禁通知：[[PROJ:VAN|在条目中增加无意义文字]]', '封鎖通知：[[PROJ:VAN|在條目中增加無意義文字]]'),
 		templateName: 'uw-block'
 	},
 	'uw-pablock': {
 		autoblock: true,
 		expiry: '1 day',
 		nocreate: true,
-		reason: wgULS('无礼的行为、[[WP:NPA|攻击别人]]', '無禮的行為、[[WP:NPA|攻擊別人]]'),
-		summary: wgULS('封禁通知：无礼的行为、[[WP:NPA|人身攻击]]', '封鎖通知：無禮的行為、[[WP:NPA|人身攻擊]]'),
+		reason: wgULS('无礼的行为、[[PROJ:NPA|攻击别人]]', '無禮的行為、[[PROJ:NPA|攻擊別人]]'),
+		summary: wgULS('封禁通知：无礼的行为、[[PROJ:NPA|人身攻击]]', '封鎖通知：無禮的行為、[[PROJ:NPA|人身攻擊]]'),
 		templateName: 'uw-block'
 	},
 	'uw-sblock': {
 		autoblock: true,
 		nocreate: true,
-		reason: wgULS('不断加入[[Wikipedia:垃圾内容|垃圾链接]]', '不斷加入[[Wikipedia:垃圾內容|垃圾連結]]'),
-		summary: wgULS('封禁通知：利用维基百科散发[[Wikipedia:垃圾内容|垃圾链接]]', '封鎖通知：利用維基百科散發[[Wikipedia:垃圾內容|垃圾連結]]')
+		reason: wgULS('不断加入[[Project:垃圾内容|垃圾链接]]', '不斷加入[[Project:垃圾內容|垃圾連結]]'),
+		summary: wgULS('封禁通知：利用维基百科散发[[Project:垃圾内容|垃圾链接]]', '封鎖通知：利用維基百科散發[[Project:垃圾內容|垃圾連結]]')
 	},
 	'uw-soablock': {
 		autoblock: true,
@@ -1175,8 +1175,8 @@ Twinkle.block.blockPresetsInfo = {
 		forRegisteredOnly: true,
 		nocreate: true,
 		pageParam: true,
-		reason: wgULS('[[WP:SOAP|散发广告/宣传]]', '[[WP:SOAP|散發廣告/宣傳]]'),
-		summary: wgULS('封禁通知：仅[[WP:SOAP|散发广告/宣传]]', '封鎖通知：僅[[WP:SOAP|散發廣告/宣傳]]'),
+		reason: wgULS('[[PROJ:SOAP|散发广告/宣传]]', '[[PROJ:SOAP|散發廣告/宣傳]]'),
+		summary: wgULS('封禁通知：仅[[PROJ:SOAP|散发广告/宣传]]', '封鎖通知：僅[[PROJ:SOAP|散發廣告/宣傳]]'),
 		templateName: 'uw-block'
 	},
 	'uw-sockblock': {
@@ -1184,15 +1184,15 @@ Twinkle.block.blockPresetsInfo = {
 		expiry: '1 week',
 		forRegisteredOnly: true,
 		nocreate: true,
-		reason: wgULS('滥用[[WP:SOCK|多个账户]]', '濫用[[WP:SOCK|多個帳號]]'),
-		summary: wgULS('封禁通知：滥用[[WP:SOCK|多个账户]]', '封鎖通知：濫用[[WP:SOCK|多個帳號]]'),
+		reason: wgULS('滥用[[PROJ:SOCK|多个账户]]', '濫用[[PROJ:SOCK|多個帳號]]'),
+		summary: wgULS('封禁通知：滥用[[PROJ:SOCK|多个账户]]', '封鎖通知：濫用[[PROJ:SOCK|多個帳號]]'),
 		templateName: 'uw-block'
 	},
 	'uw-softerblock': {
 		expiry: 'infinity',
 		forRegisteredOnly: true,
 		reason: '{{uw-softerblock}}<!-- ' + wgULS('宣传性用户名、软封禁', '宣傳性使用者名稱、軟封鎖') + ' -->',
-		summary: wgULS('封禁通知：您的[[WP:U|用户名]]暗示您的账户代表一个团体、组织或网站', '封鎖通知：您的[[WP:U|使用者名稱]]暗示您的帳號代表一個團體、組織或網站')
+		summary: wgULS('封禁通知：您的[[PROJ:U|用户名]]暗示您的账户代表一个团体、组织或网站', '封鎖通知：您的[[PROJ:U|使用者名稱]]暗示您的帳號代表一個團體、組織或網站')
 	},
 	'uw-spamublock': {
 		autoblock: true,
@@ -1200,19 +1200,19 @@ Twinkle.block.blockPresetsInfo = {
 		forRegisteredOnly: true,
 		nocreate: true,
 		reason: '{{uw-spamublock}}<!-- ' + wgULS('宣传性用户名、宣传性编辑', '宣傳性使用者名稱、宣傳性編輯') + ' -->',
-		summary: wgULS('封禁通知：仅[[WP:SOAP|广告宣传]]，同时您的用户名违反[[WP:U|用户名方针]]', '封鎖通知：僅[[WP:SOAP|廣告宣傳]]，同時您的使用者名稱違反[[WP:U|使用者名稱方針]]')
+		summary: wgULS('封禁通知：仅[[PROJ:SOAP|广告宣传]]，同时您的用户名违反[[PROJ:U|用户名方针]]', '封鎖通知：僅[[PROJ:SOAP|廣告宣傳]]，同時您的使用者名稱違反[[PROJ:U|使用者名稱方針]]')
 	},
 	'uw-ublock': {
 		expiry: 'infinity',
 		forRegisteredOnly: true,
 		reason: '{{uw-ublock}}<!-- ' + wgULS('不当用户名、软封禁', '不當使用者名稱、軟封鎖') + ' -->',
-		summary: wgULS('封禁通知：您的用户名违反[[WP:U|用户名方针]]', '封鎖通知：您的使用者名稱違反[[WP:U|使用者名稱方針]]')
+		summary: wgULS('封禁通知：您的用户名违反[[PROJ:U|用户名方针]]', '封鎖通知：您的使用者名稱違反[[PROJ:U|使用者名稱方針]]')
 	},
 	'uw-ublock-double': {
 		expiry: 'infinity',
 		forRegisteredOnly: true,
 		reason: '{{uw-ublock-double}}<!-- ' + wgULS('用户名与其他用户相似、软封禁', '使用者名稱與其他使用者相似、軟封鎖') + ' -->',
-		summary: wgULS('封禁通知：您的[[WP:U|用户名]]与其他维基百科用户过于相似', '封鎖通知：您的[[WP:U|使用者名稱]]與其他維基百科使用者過於相似')
+		summary: wgULS('封禁通知：您的[[PROJ:U|用户名]]与其他维基百科用户过于相似', '封鎖通知：您的[[PROJ:U|使用者名稱]]與其他維基百科使用者過於相似')
 	},
 	'uw-ucblock': {
 		autoblock: true,
@@ -1227,7 +1227,7 @@ Twinkle.block.blockPresetsInfo = {
 		expiry: 'infinity',
 		forRegisteredOnly: true,
 		reason: '{{uw-ublock-wellknown}}<!-- ' + wgULS('用户名与知名人物相似、软封禁', '使用者名稱與知名人物相似、軟封鎖') + ' -->',
-		summary: wgULS('封禁通知：您的[[WP:U|用户名]]与知名人物过于相似', '封鎖通知：您的[[WP:U|使用者名稱]]與知名人物過於相似')
+		summary: wgULS('封禁通知：您的[[PROJ:U|用户名]]与知名人物过于相似', '封鎖通知：您的[[PROJ:U|使用者名稱]]與知名人物過於相似')
 	},
 	'uw-uhblock-double': {
 		autoblock: true,
@@ -1235,7 +1235,7 @@ Twinkle.block.blockPresetsInfo = {
 		forRegisteredOnly: true,
 		nocreate: true,
 		reason: '{{uw-uhblock-double}}<!-- ' + wgULS('用户名试图冒充其他用户、硬封禁', '使用者名稱試圖冒充其他使用者、硬封鎖') + ' -->',
-		summary: wgULS('封禁通知：您的[[WP:U|用户名]]试图冒充其他维基百科用户', '封鎖通知：您的[[WP:U|使用者名稱]]試圖冒充其他維基百科使用者')
+		summary: wgULS('封禁通知：您的[[PROJ:U|用户名]]试图冒充其他维基百科用户', '封鎖通知：您的[[PROJ:U|使用者名稱]]試圖冒充其他維基百科使用者')
 	},
 	'uw-ublock|误导': {
 		expiry: 'infinity',
@@ -1262,8 +1262,8 @@ Twinkle.block.blockPresetsInfo = {
 		expiry: '1 day',
 		nocreate: true,
 		pageParam: true,
-		reason: wgULS('[[WP:VAN|破坏]]', '[[WP:VAN|破壞]]'),
-		summary: wgULS('封禁通知：[[WP:VAN|破坏]]', '封鎖通知：[[WP:VAN|破壞]]')
+		reason: wgULS('[[PROJ:VAN|破坏]]', '[[PROJ:VAN|破壞]]'),
+		summary: wgULS('封禁通知：[[PROJ:VAN|破坏]]', '封鎖通知：[[PROJ:VAN|破壞]]')
 	},
 	'uw-voablock': {
 		autoblock: true,
@@ -1271,8 +1271,8 @@ Twinkle.block.blockPresetsInfo = {
 		forRegisteredOnly: true,
 		nocreate: true,
 		pageParam: true,
-		reason: wgULS('[[WP:VOA|纯粹破坏]]', '[[WP:VOA|純粹破壞]]'),
-		summary: wgULS('封禁通知：您的账户仅用于[[WP:VAN|破坏]]', '封鎖通知：您的帳號僅用於[[WP:VAN|破壞]]'),
+		reason: wgULS('[[PROJ:VOA|纯粹破坏]]', '[[PROJ:VOA|純粹破壞]]'),
+		summary: wgULS('封禁通知：您的账户仅用于[[PROJ:VAN|破坏]]', '封鎖通知：您的帳號僅用於[[PROJ:VAN|破壞]]'),
 		templateName: 'uw-blockindef'
 	},
 	'Bot block message': {
@@ -1290,8 +1290,8 @@ Twinkle.block.blockPresetsInfo = {
 		nocreate: true,
 		pageParam: true,
 		reasonParam: true,
-		reason: wgULS('[[WP:VAN#LANG|繁简破坏]]', '[[WP:VAN#LANG|繁簡破壞]]'),
-		summary: wgULS('封禁通知：[[WP:VAN#LANG|无故替换繁简用字]]', '封鎖通知：[[WP:VAN#LANG|無故替換繁簡用字]]'),
+		reason: wgULS('[[PROJ:VAN#LANG|繁简破坏]]', '[[PROJ:VAN#LANG|繁簡破壞]]'),
+		summary: wgULS('封禁通知：[[PROJ:VAN#LANG|无故替换繁简用字]]', '封鎖通知：[[PROJ:VAN#LANG|無故替換繁簡用字]]'),
 		templateName: 'uw-block'
 	},
 	'cross-wiki-van': {
@@ -1301,7 +1301,7 @@ Twinkle.block.blockPresetsInfo = {
 		nocreate: true,
 		reasonParam: true,
 		reason: wgULS('跨维基项目破坏', '跨維基項目破壞'),
-		summary: wgULS('封禁通知：跨维基项目[[WP:VAN|破坏]]', '封鎖通知：跨維基項目[[WP:VAN|破壞]]'),
+		summary: wgULS('封禁通知：跨维基项目[[PROJ:VAN|破坏]]', '封鎖通知：跨維基項目[[PROJ:VAN|破壞]]'),
 		templateName: 'uw-blockindef'
 	},
 	'point-block': {
@@ -1309,8 +1309,8 @@ Twinkle.block.blockPresetsInfo = {
 		expiry: '1 day',
 		nocreate: true,
 		reasonParam: true,
-		reason: wgULS('[[WP:POINT|为了阐释观点而扰乱维基百科]]', '[[WP:POINT|為了闡釋觀點而擾亂維基百科]]'),
-		summary: wgULS('封禁通知：[[WP:POINT|为了阐释观点而扰乱维基百科]]', '封鎖通知：[[WP:POINT|為了闡釋觀點而擾亂維基百科]]'),
+		reason: wgULS('[[PROJ:POINT|为了阐释观点而扰乱维基百科]]', '[[PROJ:POINT|為了闡釋觀點而擾亂維基百科]]'),
+		summary: wgULS('封禁通知：[[PROJ:POINT|为了阐释观点而扰乱维基百科]]', '封鎖通知：[[PROJ:POINT|為了闡釋觀點而擾亂維基百科]]'),
 		templateName: 'uw-block'
 	},
 	'game-block': {
@@ -1318,8 +1318,8 @@ Twinkle.block.blockPresetsInfo = {
 		expiry: '1 day',
 		nocreate: true,
 		reasonParam: true,
-		reason: wgULS('[[WP:GAME|游戏维基规则]]', '[[WP:GAME|遊戲維基規則]]'),
-		summary: wgULS('封禁通知：[[WP:GAME|游戏维基规则]]', '封鎖通知：[[WP:GAME|遊戲維基規則]]'),
+		reason: wgULS('[[PROJ:GAME|游戏维基规则]]', '[[PROJ:GAME|遊戲維基規則]]'),
+		summary: wgULS('封禁通知：[[PROJ:GAME|游戏维基规则]]', '封鎖通知：[[PROJ:GAME|遊戲維基規則]]'),
 		templateName: 'uw-block'
 	},
 	'sock-contribs-anon': {
@@ -1328,8 +1328,8 @@ Twinkle.block.blockPresetsInfo = {
 		forAnonOnly: true,
 		nocreate: true,
 		reasonParam: true,
-		reason: wgULS('确认为[[WP:SOCK|傀儡]]或[[WP:MEAT|真人傀儡]] - 根据用户贡献确定', '確認為[[WP:SOCK|傀儡]]或[[WP:MEAT|真人傀儡]] - 根據使用者貢獻確定'),
-		summary: wgULS('封禁通知：[[WP:SOCK|使用其他IP地址绕过封禁]]', '封鎖通知：[[WP:SOCK|使用其他IP位址繞過封鎖]]'),
+		reason: wgULS('确认为[[PROJ:SOCK|傀儡]]或[[PROJ:MEAT|真人傀儡]] - 根据用户贡献确定', '確認為[[PROJ:SOCK|傀儡]]或[[PROJ:MEAT|真人傀儡]] - 根據使用者貢獻確定'),
+		summary: wgULS('封禁通知：[[PROJ:SOCK|使用其他IP地址绕过封禁]]', '封鎖通知：[[PROJ:SOCK|使用其他IP位址繞過封鎖]]'),
 		templateName: 'uw-ablock'
 	},
 	'sock-cu-anon': {
@@ -1338,8 +1338,8 @@ Twinkle.block.blockPresetsInfo = {
 		forAnonOnly: true,
 		nocreate: true,
 		reasonParam: true,
-		reason: wgULS('确认为[[WP:SOCK|傀儡]]或[[WP:MEAT|真人傀儡]] - 用户查核确认', '確認為[[WP:SOCK|傀儡]]或[[WP:MEAT|真人傀儡]] - 使用者查核確認'),
-		summary: wgULS('封禁通知：[[WP:SOCK|使用其他IP地址绕过封禁]]', '封鎖通知：[[WP:SOCK|使用其他IP位址繞過封鎖]]'),
+		reason: wgULS('确认为[[PROJ:SOCK|傀儡]]或[[PROJ:MEAT|真人傀儡]] - 用户查核确认', '確認為[[PROJ:SOCK|傀儡]]或[[PROJ:MEAT|真人傀儡]] - 使用者查核確認'),
+		summary: wgULS('封禁通知：[[PROJ:SOCK|使用其他IP地址绕过封禁]]', '封鎖通知：[[PROJ:SOCK|使用其他IP位址繞過封鎖]]'),
 		templateName: 'uw-ablock'
 	},
 	'sock-contribs-reg': {
@@ -1348,8 +1348,8 @@ Twinkle.block.blockPresetsInfo = {
 		forRegisteredOnly: true,
 		nocreate: true,
 		reasonParam: true,
-		reason: wgULS('确认为[[WP:SOCK|傀儡]]或[[WP:MEAT|真人傀儡]] - 根据用户贡献确定', '確認為[[WP:SOCK|傀儡]]或[[WP:MEAT|真人傀儡]] - 根據使用者貢獻確定'),
-		summary: wgULS('封禁通知：确认为[[WP:SOCK|傀儡]]或[[WP:MEAT|真人傀儡]]', '封鎖通知：確認為[[WP:SOCK|傀儡]]或[[WP:MEAT|真人傀儡]]'),
+		reason: wgULS('确认为[[PROJ:SOCK|傀儡]]或[[PROJ:MEAT|真人傀儡]] - 根据用户贡献确定', '確認為[[PROJ:SOCK|傀儡]]或[[PROJ:MEAT|真人傀儡]] - 根據使用者貢獻確定'),
+		summary: wgULS('封禁通知：确认为[[PROJ:SOCK|傀儡]]或[[PROJ:MEAT|真人傀儡]]', '封鎖通知：確認為[[PROJ:SOCK|傀儡]]或[[PROJ:MEAT|真人傀儡]]'),
 		templateName: 'uw-blockindef'
 	},
 	'sock-cu-reg': {
@@ -1358,8 +1358,8 @@ Twinkle.block.blockPresetsInfo = {
 		forRegisteredOnly: true,
 		nocreate: true,
 		reasonParam: true,
-		reason: wgULS('确认为[[WP:SOCK|傀儡]]或[[WP:MEAT|真人傀儡]] - 用户查核确认', '確認為[[WP:SOCK|傀儡]]或[[WP:MEAT|真人傀儡]] - 使用者查核確認'),
-		summary: wgULS('封禁通知：确认为[[WP:SOCK|傀儡]]或[[WP:MEAT|真人傀儡]]', '封鎖通知：確認為[[WP:SOCK|傀儡]]或[[WP:MEAT|真人傀儡]]'),
+		reason: wgULS('确认为[[PROJ:SOCK|傀儡]]或[[PROJ:MEAT|真人傀儡]] - 用户查核确认', '確認為[[PROJ:SOCK|傀儡]]或[[PROJ:MEAT|真人傀儡]] - 使用者查核確認'),
+		summary: wgULS('封禁通知：确认为[[PROJ:SOCK|傀儡]]或[[PROJ:MEAT|真人傀儡]]', '封鎖通知：確認為[[PROJ:SOCK|傀儡]]或[[PROJ:MEAT|真人傀儡]]'),
 		templateName: 'uw-blockindef'
 	},
 
@@ -2008,7 +2008,7 @@ Twinkle.block.callback.evaluate = function twinkleblockCallbackEvaluate(e) {
 					Twinkle.block.callback.issue_template(templateoptions);
 				}
 				if (toClosevip) {
-					var vipPage = new Morebits.wiki.page('Wikipedia:当前的破坏', wgULS('关闭请求', '關閉請求'));
+					var vipPage = new Morebits.wiki.page('Project:当前的破坏', wgULS('关闭请求', '關閉請求'));
 					vipPage.setFollowRedirect(true);
 					vipPage.setCallbackParameters(blockoptions);
 					vipPage.load(Twinkle.block.callback.closeRequest);
@@ -2293,7 +2293,7 @@ Twinkle.block.callback.getBlockNoticeWikitext = function(params) {
 					var namespaceNames = params.namespacerestrictions.map(function(id) {
 						return menuFormattedNamespaces[id];
 					});
-					text += wgULS('[[Wikipedia:命名空间|命名空间]]（', '[[Wikipedia:命名空間|命名空間]]（') + makeSentence(namespaceNames) + '）';
+					text += wgULS('[[Project:命名空间|命名空间]]（', '[[Project:命名空間|命名空間]]（') + makeSentence(namespaceNames) + '）';
 				}
 			} else if (params.area) {
 				text += '|area=' + params.area;
