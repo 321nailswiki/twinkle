@@ -34,7 +34,7 @@ Twinkle.config.watchlistEnums = {
 Twinkle.config.commonSets = {
 	csdCriteria: {
 		db: wgULS('自定义理由', '自訂理由'),
-		g1: 'G1', g2: 'G2', g3: 'G3', g4: 'G4', g5: 'G5', g10: 'G10', g11: 'G11', g12: 'G12', g13: 'G13', g14: 'G14', g15: 'G15', g16: 'G16',
+		g1: 'G1', g2: 'G2', g3: 'G3', g18: 'G18', g5: 'G5', g10: 'G10', g11: 'G11', g12: 'G12', g13: 'G13', g14: 'G14', g15: 'G15', g16: 'G16',
 		a1: 'A1', a2: 'A2', a3: 'A3', a5: 'A5', a6: 'A6',
 		o1: 'O1', o3: 'O3', o4: 'O4', o7: 'O7', o8: 'O8',
 		f1: 'F1', f3: 'F3', f4: 'F4', f5: 'F5', f6: 'F6', f7: 'F7', f8: 'F8', f9: 'F9', f10: 'F10',
@@ -42,7 +42,7 @@ Twinkle.config.commonSets = {
 	},
 	csdCriteriaDisplayOrder: [
 		'db',
-		'g1', 'g2', 'g3', 'g4', 'g5', 'g10', 'g11', 'g12', 'g13', 'g14', 'g15', 'g16',
+		'g1', 'g2', 'g3', 'g18', 'g5', 'g10', 'g11', 'g12', 'g13', 'g14', 'g15', 'g16',
 		'a1', 'a2', 'a3', 'a5', 'a6',
 		'o1', 'o3', 'o4', 'o7', 'o8',
 		'f1', 'f3', 'f4', 'f5', 'f6', 'f7', 'f8', 'f9', 'f10',
@@ -50,7 +50,7 @@ Twinkle.config.commonSets = {
 	],
 	csdCriteriaNotification: {
 		db: wgULS('自定义理由', '自訂理由'),
-		g1: 'G1', g2: 'G2', g3: 'G3', g4: 'G4', g5: 'G5', g10: 'G10', g11: 'G11', g12: 'G12', g13: 'G13', g14: 'G14', g15: 'G15', g16: 'G16',
+		g1: 'G1', g2: 'G2', g3: 'G3', g18: 'G18', g5: 'G5', g10: 'G10', g11: 'G11', g12: 'G12', g13: 'G13', g14: 'G14', g15: 'G15', g16: 'G16',
 		a1: 'A1', a2: 'A2', a3: 'A3', a5: 'A5', a6: 'A6',
 		o1: 'O1', o3: 'O3', o4: 'O4', o7: 'O7', o8: 'O8',
 		f1: 'F1', f3: 'F3', f4: 'F4', f5: 'F5', f6: 'F6', f7: 'F7', f8: 'F8', f9: 'F9', f10: 'F10',
@@ -58,7 +58,7 @@ Twinkle.config.commonSets = {
 	},
 	csdCriteriaNotificationDisplayOrder: [
 		'db',
-		'g1', 'g2', 'g3', 'g4', 'g5', 'g10', 'g11', 'g12', 'g13', 'g14', 'g15', 'g16',
+		'g1', 'g2', 'g3', 'g18', 'g5', 'g10', 'g11', 'g12', 'g13', 'g14', 'g15', 'g16',
 		'a1', 'a2', 'a3', 'a5', 'a6',
 		'o1', 'o3', 'o4', 'o7', 'o8',
 		'f1', 'f3', 'f4', 'f5', 'f6', 'f7', 'f8', 'f9', 'f10',
@@ -66,7 +66,7 @@ Twinkle.config.commonSets = {
 	],
 	csdAndDICriteria: {
 		db: wgULS('自定义理由', '自訂理由'),
-		g1: 'G1', g2: 'G2', g3: 'G3', g4: 'G4', g5: 'G5', g10: 'G10', g11: 'G11', g12: 'G12', g13: 'G13', g14: 'G14', g15: 'G15', g16: 'G16',
+		g1: 'G1', g2: 'G2', g3: 'G3', g18: 'G18', g5: 'G5', g10: 'G10', g11: 'G11', g12: 'G12', g13: 'G13', g14: 'G14', g15: 'G15', g16: 'G16',
 		a1: 'A1', a2: 'A2', a3: 'A3', a5: 'A5', a6: 'A6',
 		o1: 'O1', o3: 'O3', o4: 'O4', o7: 'O7', o8: 'O8',
 		f1: 'F1', f3: 'F3', f4: 'F4', f5: 'F5', f6: 'F6', f7: 'F7', f8: 'F8', f9: 'F9', f10: 'F10',
@@ -74,7 +74,7 @@ Twinkle.config.commonSets = {
 	},
 	csdAndDICriteriaDisplayOrder: [
 		'db',
-		'g1', 'g2', 'g3', 'g4', 'g5', 'g10', 'g11', 'g12', 'g13', 'g14', 'g15', 'g16',
+		'g1', 'g2', 'g3', 'g18', 'g5', 'g10', 'g11', 'g12', 'g13', 'g14', 'g15', 'g16',
 		'a1', 'a2', 'a3', 'a5', 'a6',
 		'o1', 'o3', 'o4', 'o7', 'o8',
 		'f1', 'f3', 'f4', 'f5', 'f6', 'f7', 'f8', 'f9', 'f10',
