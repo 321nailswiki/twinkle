@@ -3903,7 +3903,7 @@ Morebits.wiki.page = function(pageName, status) {
 				}
 			}
 			// set revert edit summary
-			ctx.editSummary = '[[WP:UNDO|取消]]由 ' + ctx.revertUser + ' 所做出的' + wgULS('修订 ', '修訂 ') + ctx.revertOldID + '：' + ctx.editSummary;
+			ctx.editSummary = '[[PROJ:UNDO|取消]]由 ' + ctx.revertUser + ' 所做出的' + wgULS('修订 ', '修訂 ') + ctx.revertOldID + '：' + ctx.editSummary;
 		}
 
 		ctx.pageLoaded = true;
@@ -4085,7 +4085,7 @@ Morebits.wiki.page = function(pageName, status) {
 					break;
 
 				case 'abusefilter-disallowed':
-					ctx.statusElement.error(wgULS('编辑被防滥用过滤器规则“', '編輯被防濫用過濾器規則「') + errorData.abusefilter.description + wgULS('”阻止。如果您认为您的该次编辑是有意义的，请至 Wikipedia:防滥用过滤器/错误报告 提报。', '」阻止。如果您認為您的該次編輯是有意義的，請至 Wikipedia:防濫用過濾器/錯誤報告 提報。'));
+					ctx.statusElement.error(wgULS('编辑被防滥用过滤器规则“', '編輯被防濫用過濾器規則「') + errorData.abusefilter.description + wgULS('”阻止。如果您认为您的该次编辑是有意义的，请至 Project:防滥用过滤器/错误报告 提报。', '」阻止。如果您認為您的該次編輯是有意義的，請至 Project:防濫用過濾器/錯誤報告 提報。'));
 					break;
 
 				case 'abusefilter-warning':

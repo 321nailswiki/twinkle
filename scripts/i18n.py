@@ -132,7 +132,8 @@ for filename in run_files:
         data['uselang'] = 'zh-tw'
     else:
         data['uselang'] = 'zh-cn'
-    r = requests.post('https://zh.wikipedia.org/w/api.php', data=data, headers=headers)
+    r = requests.post('https://321nail.crpteam.club/w/api.php', data=data, headers=headers) 
+    # r = requests.post('https://zh.wikipedia.org/w/api.php', data=data, headers=headers)
     try:
         result = r.json()
     except Exception as e:

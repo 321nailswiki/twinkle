@@ -35,12 +35,12 @@ Twinkle.arv.callback = function (uid, isIP) {
 	var Window = new Morebits.simpleWindow(600, 500);
 	Window.setTitle(wgULS('报告用户给管理人员', '報告使用者給管理人員'));
 	Window.setScriptName('Twinkle');
-	Window.addFooterLink('VIP', 'WP:VIP');
-	Window.addFooterLink('EWIP', 'WP:EWIP');
-	Window.addFooterLink('UAA', 'WP:UAA');
-	Window.addFooterLink(wgULS('用户名方针', '使用者名稱方針'), 'WP:U');
-	Window.addFooterLink('SPI', 'WP:SPI');
-	Window.addFooterLink(wgULS('告状设置', '告狀設定'), 'WP:TW/PREF#arv');
+	Window.addFooterLink('VIP', 'PROJ:VIP');
+	Window.addFooterLink('EWIP', 'PROJ:EWIP');
+	Window.addFooterLink('UAA', 'PROJ:UAA');
+	Window.addFooterLink(wgULS('用户名方针', '使用者名稱方針'), 'PROJ:U');
+	Window.addFooterLink('SPI', 'PROJ:SPI');
+	Window.addFooterLink(wgULS('告状设置', '告狀設定'), 'PROJ:TW/PREF#arv');
 	Window.addFooterLink(wgULS('Twinkle帮助', 'Twinkle說明'), 'H:TW#告狀');
 
 	var form = new Morebits.quickForm(Twinkle.arv.callback.evaluate);
@@ -52,23 +52,23 @@ Twinkle.arv.callback = function (uid, isIP) {
 	});
 	categories.append({
 		type: 'option',
-		label: wgULS('破坏（WP:VIP）', '破壞（WP:VIP）'),
+		label: wgULS('破坏（PROJ:VIP）', '破壞（PROJ:VIP）'),
 		value: 'aiv'
 	});
 	categories.append({
 		type: 'option',
-		label: wgULS('编辑争议（WP:EWIP）', '編輯爭議（WP:EWIP）'),
+		label: wgULS('编辑争议（PROJ:EWIP）', '編輯爭議（PROJ:EWIP）'),
 		value: 'ewip'
 	});
 	categories.append({
 		type: 'option',
-		label: wgULS('用户名（WP:UAA）', '使用者名稱（WP:UAA）'),
+		label: wgULS('用户名（PROJ:UAA）', '使用者名稱（PROJ:UAA）'),
 		value: 'username',
 		disabled: mw.util.isIPAddress(uid)
 	});
 	categories.append({
 		type: 'option',
-		label: wgULS('傀儡调查（WP:SPI）', '傀儡調查（WP:SPI）'),
+		label: wgULS('傀儡调查（PROJ:SPI）', '傀儡調查（PROJ:SPI）'),
 		value: 'spi'
 	});
 	form.append({
@@ -151,12 +151,12 @@ Twinkle.arv.callback.sockmaster_changed = function twinklearvCallbackSockmasterC
 };
 
 Twinkle.arv.callback.spi_notice = function twinklearvCallbackSpiNotice(form, sockmaster) {
-	var previewText = '{{#ifexist:Wikipedia:傀儡調查/案件/' + sockmaster +
-		'|{{#ifexist:Wikipedia:傀儡調查/案件通告/' + sockmaster +
-		'  |<div class="extendedconfirmed-show sysop-show">{{Memo|1={{Wikipedia:傀儡調查/案件通告/' + sockmaster + '}}|2=notice}}</div>' +
+	var previewText = '{{#ifexist:Project:傀儡調查/案件/' + sockmaster +
+		'|{{#ifexist:Project:傀儡調查/案件通告/' + sockmaster +
+		'  |<div class="extendedconfirmed-show sysop-show">{{Memo|1={{Project:傀儡調查/案件通告/' + sockmaster + '}}|2=notice}}</div>' +
 		'  |無案件通告}}' +
 		'|您將建立新的提報頁面，如果您希望提報過往曾被提報過的使用者，請檢查您的輸入是否正確。}}';
-	form.spinoticepreviewer.beginRender(previewText, 'Wikipedia:傀儡調查/案件/' + sockmaster);
+	form.spinoticepreviewer.beginRender(previewText, 'Project:傀儡調查/案件/' + sockmaster);
 };
 
 Twinkle.arv.callback.set_sockmaster = function twinklearvCallbackSetSockmaster(sockmaster) {
@@ -388,11 +388,11 @@ Twinkle.arv.callback.changeCategory = function (e) {
 				type: 'input',
 				name: 'sockmaster',
 				label: $('<a>', {
-					href: mw.util.getUrl('Special:PrefixIndex/Wikipedia:傀儡調查/案件/'),
-					text: 'Wikipedia:傀儡調查/案件/',
+					href: mw.util.getUrl('Special:PrefixIndex/Project:傀儡調查/案件/'),
+					text: 'Project:傀儡調查/案件/',
 					target: '_blank'
 				})[0],
-				tooltip: wgULS('主账户的用户名（不含User:前缀），这被用于创建傀儡调查子页面的标题，可在 Wikipedia:傀儡调查/案件 的子页面搜索先前的调查。', '主帳號的使用者名稱（不含User:字首），這被用於建立傀儡調查子頁面的標題，可在 Wikipedia:傀儡調查/案件 的子頁面搜尋先前的調查。'),
+				tooltip: wgULS('主账户的用户名（不含User:前缀），这被用于创建傀儡调查子页面的标题，可在 Project:傀儡调查/案件 的子页面搜索先前的调查。', '主帳號的使用者名稱（不含User:字首），這被用於建立傀儡調查子頁面的標題，可在 Project:傀儡調查/案件 的子頁面搜尋先前的調查。'),
 				value: root.uid.value,
 				event: Twinkle.arv.callback.sockmaster_changed
 			});
@@ -449,10 +449,10 @@ Twinkle.arv.callback.preview = function(form) {
 	var input = Morebits.quickForm.getInputData(form);
 	var title;
 	switch (input.category) {
-		case 'vip': title = 'Wikipedia:当前的破坏'; break;
-		case 'ewip': title = 'Wikipedia:管理员布告板/编辑争议'; break;
-		case 'username': title = 'Wikipedia:管理员布告板/不当用户名'; break;
-		case 'spi': title = 'Wikipedia:傀儡調查/案件/' + input.sockmaster; break;
+		case 'vip': title = 'Project:当前的破坏'; break;
+		case 'ewip': title = 'Project:管理员布告板/编辑争议'; break;
+		case 'username': title = 'Project:管理员布告板/不当用户名'; break;
+		case 'spi': title = 'Project:傀儡調查/案件/' + input.sockmaster; break;
 		default: title = mw.config.get('wgPageName'); break;
 	}
 	form.previewer.beginRender('__NOTOC__' + reason[0], title);
@@ -624,7 +624,7 @@ Twinkle.arv.callback.getReportWikitext = function(form) {
 			reason = comment;
 			break;
 
-		// WP:SPI
+		// PROJ:SPI
 		case 'spi':
 			if (!input.reason) {
 				alert(wgULS('请输入证据。', '請輸入證據。'));
@@ -684,15 +684,15 @@ Twinkle.arv.callback.evaluate = function(e) {
 			Morebits.simpleWindow.setButtonsEnabled(false);
 			Morebits.status.init(form);
 
-			Morebits.wiki.actionCompleted.redirect = 'Wikipedia:当前的破坏';
+			Morebits.wiki.actionCompleted.redirect = 'Project:当前的破坏';
 			Morebits.wiki.actionCompleted.notice = wgULS('报告完成', '報告完成');
 
-			var aivPage = new Morebits.wiki.page('Wikipedia:当前的破坏', wgULS('处理VIP请求', '處理VIP請求'));
+			var aivPage = new Morebits.wiki.page('Project:当前的破坏', wgULS('处理VIP请求', '處理VIP請求'));
 			aivPage.setFollowRedirect(true);
 
 			aivPage.load(function() {
 				var text = aivPage.getPageText();
-				var $aivLink = '<a target="_blank" href="/wiki/WP:VIP">WP:VIP</a>';
+				var $aivLink = '<a target="_blank" href="/wiki/PROJ:VIP">PROJ:VIP</a>';
 
 				// check if user has already been reported
 				if (new RegExp('===\\s*\\{\\{\\s*(?:[Vv]andal)\\s*\\|\\s*(?:1=)?\\s*' + Morebits.string.escapeRegExp(uid) + '\\s*\\}\\}\\s*===').test(text)) {
@@ -720,15 +720,15 @@ Twinkle.arv.callback.evaluate = function(e) {
 			Morebits.simpleWindow.setButtonsEnabled(false);
 			Morebits.status.init(form);
 
-			Morebits.wiki.actionCompleted.redirect = 'Wikipedia:管理员布告板/编辑争议';
+			Morebits.wiki.actionCompleted.redirect = 'Project:管理员布告板/编辑争议';
 			Morebits.wiki.actionCompleted.notice = wgULS('报告完成', '報告完成');
 
-			var ewipPage = new Morebits.wiki.page('Wikipedia:管理员布告板/编辑争议', wgULS('处理EWIP请求', '處理EWIP請求'));
+			var ewipPage = new Morebits.wiki.page('Project:管理员布告板/编辑争议', wgULS('处理EWIP请求', '處理EWIP請求'));
 			ewipPage.setFollowRedirect(true);
 
 			ewipPage.load(function() {
 				var text = ewipPage.getPageText();
-				var $ewipLink = '<a target="_blank" href="/wiki/WP:EWIP">WP:EWIP</a>';
+				var $ewipLink = '<a target="_blank" href="/wiki/PROJ:EWIP">PROJ:EWIP</a>';
 
 				// check if user has already been reported
 				if (new RegExp('===\\s*\\{\\{\\s*(?:[Vv]andal)\\s*\\|\\s*(?:1=)?\\s*' + Morebits.string.escapeRegExp(uid) + '\\s*\\}\\}\\s*===').test(text)) {
@@ -752,10 +752,10 @@ Twinkle.arv.callback.evaluate = function(e) {
 			Morebits.simpleWindow.setButtonsEnabled(false);
 			Morebits.status.init(form);
 
-			Morebits.wiki.actionCompleted.redirect = 'Wikipedia:管理员布告板/不当用户名';
+			Morebits.wiki.actionCompleted.redirect = 'Project:管理员布告板/不当用户名';
 			Morebits.wiki.actionCompleted.notice = wgULS('报告完成', '報告完成');
 
-			var uaaPage = new Morebits.wiki.page('Wikipedia:管理员布告板/不当用户名', wgULS('处理UAA请求', '處理UAA請求'));
+			var uaaPage = new Morebits.wiki.page('Project:管理员布告板/不当用户名', wgULS('处理UAA请求', '處理UAA請求'));
 			uaaPage.setFollowRedirect(true);
 
 			uaaPage.load(function() {
@@ -764,7 +764,7 @@ Twinkle.arv.callback.evaluate = function(e) {
 				// check if user has already been reported
 				if (new RegExp('\\{\\{\\s*user-uaa\\s*\\|\\s*(1\\s*=\\s*)?' + Morebits.string.escapeRegExp(uid) + '\\s*(\\||\\})').test(text)) {
 					uaaPage.getStatusElement().error(wgULS('用户已被列入。', '使用者已被列入。'));
-					var $uaaLink = '<a target="_blank" href="/wiki/WP:UAA">WP:UAA</a>';
+					var $uaaLink = '<a target="_blank" href="/wiki/PROJ:UAA">PROJ:UAA</a>';
 					Morebits.status.printUserText(reason[1], wgULS('您输入的评论已在下方提供，您可以将其手工加入', '您輸入的評論已在下方提供，您可以將其手工加入') + $uaaLink + wgULS('上该用户的报告中：', '上該使用者的報告中：'));
 					return;
 				}
@@ -776,14 +776,14 @@ Twinkle.arv.callback.evaluate = function(e) {
 			});
 			break;
 
-		// WP:SPI
+		// PROJ:SPI
 		case 'spi':
 			reason = Twinkle.arv.callback.getReportWikitext(form);
 
 			Morebits.simpleWindow.setButtonsEnabled(false);
 			Morebits.status.init(form);
 
-			var reportpage = 'Wikipedia:傀儡調查/案件/' + input.sockmaster;
+			var reportpage = 'Project:傀儡調查/案件/' + input.sockmaster;
 
 			Morebits.wiki.actionCompleted.redirect = reportpage;
 			Morebits.wiki.actionCompleted.notice = wgULS('报告完成', '報告完成');

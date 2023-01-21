@@ -31,8 +31,8 @@ Twinkle.talkback.callback = function() {
 	Window.setTitle(wgULS('回复通告', '回覆通告'));
 	Window.setScriptName('Twinkle');
 	Window.addFooterLink(wgULS('关于{{talkback}}', '關於{{talkback}}'), 'Template:Talkback');
-	Window.addFooterLink(wgULS('通告设置', '通告設定'), 'WP:TW/PREF#talkback');
-	Window.addFooterLink(wgULS('Twinkle帮助', 'Twinkle說明'), 'WP:TW/DOC#talkback');
+	Window.addFooterLink(wgULS('通告设置', '通告設定'), 'PROJ:TW/PREF#talkback');
+	Window.addFooterLink(wgULS('Twinkle帮助', 'Twinkle說明'), 'PROJ:TW/DOC#talkback');
 
 	var form = new Morebits.quickForm(Twinkle.talkback.evaluate);
 
@@ -226,7 +226,7 @@ Twinkle.talkback.changeTarget = function(e) {
 				type: 'input',
 				name: 'page',
 				label: wgULS('完整页面名', '完整頁面名'),
-				tooltip: wgULS('您留下消息的完整页面名，比如“Wikipedia talk:Twinkle”。', '您留下訊息的完整頁面名，比如「Wikipedia talk:Twinkle」。'),
+				tooltip: wgULS('您留下消息的完整页面名，比如“Project talk:Twinkle”。', '您留下訊息的完整頁面名，比如「Project talk:Twinkle」。'),
 				value: prev_page,
 				required: true
 			});
@@ -254,7 +254,7 @@ Twinkle.talkback.changeTarget = function(e) {
 				type: 'input',
 				name: 'page',
 				label: wgULS('完整页面名', '完整頁面名'),
-				tooltip: wgULS('您留下消息的完整页面名，比如“Wikipedia talk:Twinkle”。', '您留下訊息的完整頁面名，比如「Wikipedia talk:Twinkle」。'),
+				tooltip: wgULS('您留下消息的完整页面名，比如“Project talk:Twinkle”。', '您留下訊息的完整頁面名，比如「Project talk:Twinkle」。'),
 				value: prev_page,
 				required: true
 			});
@@ -283,10 +283,10 @@ Twinkle.talkback.changeTarget = function(e) {
 
 Twinkle.talkback.noticeboards = {
 	affp: {
-		label: 'WP:AF/FP（' + wgULS('防滥用过滤器/错误报告', '防濫用過濾器/錯誤報告') + '）',
+		label: 'PROJ:AF/FP（' + wgULS('防滥用过滤器/错误报告', '防濫用過濾器/錯誤報告') + '）',
 		title: wgULS('过滤器错误报告有新回应', '過濾器錯誤報告有新回應'),
-		content: wgULS('您的[[Wikipedia:防滥用过滤器/错误报告|过滤器错误报告]]已有回应，请前往查看。', '您的[[Wikipedia:防滥用过滤器/错误报告|過濾器錯誤報告]]已有回應，請前往查看。') + '--~~~~',
-		editSummary: wgULS('有关[[Wikipedia:防滥用过滤器/错误报告]]的通知', '有關[[Wikipedia:防滥用过滤器/错误报告]]的通知'),
+		content: wgULS('您的[[Project:防滥用过滤器/错误报告|过滤器错误报告]]已有回应，请前往查看。', '您的[[Project:防滥用过滤器/错误报告|過濾器錯誤報告]]已有回應，請前往查看。') + '--~~~~',
+		editSummary: wgULS('有关[[Project:防滥用过滤器/错误报告]]的通知', '有關[[Project:防滥用过滤器/错误报告]]的通知'),
 		defaultSelected: true
 	},
 	sbl: {

@@ -25,8 +25,8 @@ Twinkle.shared.callback = function friendlysharedCallback() {
 	var Window = new Morebits.simpleWindow(600, 420);
 	Window.setTitle('Shared IP address tagging');
 	Window.setScriptName('Twinkle');
-	Window.addFooterLink('Shared prefs', 'WP:TW/PREF#shared');
-	Window.addFooterLink('Twinkle help', 'WP:TW/DOC#shared');
+	Window.addFooterLink('Shared prefs', 'PROJ:TW/PREF#shared');
+	Window.addFooterLink('Twinkle help', 'PROJ:TW/DOC#shared');
 
 	var form = new Morebits.quickForm(Twinkle.shared.callback.evaluate);
 

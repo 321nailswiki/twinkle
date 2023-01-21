@@ -14,7 +14,7 @@
  */
 
 Twinkle.close = function twinkleclose() {
-	if (Twinkle.getPref('XfdClose') === 'hide' || !/^Wikipedia:(頁面|檔案)存廢討論\/記錄\/\d+\/\d+\/\d+$/.test(mw.config.get('wgPageName'))) {
+	if (Twinkle.getPref('XfdClose') === 'hide' || !/^红砖维基:(頁面|檔案)存廢討論\/記錄\/\d+\/\d+\/\d+$/.test(mw.config.get('wgPageName'))) {
 		return;
 	}
 
@@ -266,8 +266,8 @@ Twinkle.close.callback = function twinklecloseCallback(title, section, noop) {
 	var Window = new Morebits.simpleWindow(410, 200);
 	Window.setTitle(wgULS('关闭存废讨论', '關閉存廢討論') + ' \u00B7 ' + title);
 	Window.setScriptName('Twinkle');
-	Window.addFooterLink(wgULS('存废讨论设置', '存廢討論設定'), 'WP:TW/PREF#close');
-	Window.addFooterLink(wgULS('Twinkle帮助', 'Twinkle說明'), 'WP:TW/DOC#close');
+	Window.addFooterLink(wgULS('存废讨论设置', '存廢討論設定'), 'PROJ:TW/PREF#close');
+	Window.addFooterLink(wgULS('Twinkle帮助', 'Twinkle說明'), 'PROJ:TW/DOC#close');
 
 	var form = new Morebits.quickForm(Twinkle.close.callback.evaluate);
 
@@ -564,7 +564,7 @@ Twinkle.close.callbacks = {
 		redirectDeleter.setPageList(pages);
 		redirectDeleter.run(function(pageName) {
 			var wikipedia_page = new Morebits.wiki.page(pageName, wgULS('正在删除 ', '正在刪除 ') + pageName);
-			wikipedia_page.setEditSummary('[[WP:CSD#G15|G15]]: ' + wgULS('指向已删页面“', '指向已刪頁面「') + apiobj.params.title + wgULS('”的重定向', '」的重新導向'));
+			wikipedia_page.setEditSummary('[[PROJ:CSD#G15|G15]]: ' + wgULS('指向已删页面“', '指向已刪頁面「') + apiobj.params.title + wgULS('”的重定向', '」的重新導向'));
 			wikipedia_page.setChangeTags(Twinkle.changeTags);
 			wikipedia_page.deletePage(redirectDeleter.workerSuccess, redirectDeleter.workerFailure);
 		});
@@ -579,7 +579,7 @@ Twinkle.close.callbacks = {
 		}
 
 		var page = new Morebits.wiki.page(apiobj.params.talkPage, wgULS('正在删除页面 ', '正在刪除頁面 ') + apiobj.params.title + wgULS(' 的讨论页', ' 的討論頁'));
-		page.setEditSummary('[[WP:CSD#G15|G15]]: ' + wgULS('已删页面“', '已刪頁面「') + apiobj.params.title + wgULS('”的[[Wikipedia:讨论页|讨论页]]', '」的[[Wikipedia:討論頁|討論頁]]'));
+		page.setEditSummary('[[PROJ:CSD#G15|G15]]: ' + wgULS('已删页面“', '已刪頁面「') + apiobj.params.title + wgULS('”的[[Project:讨论页|讨论页]]', '」的[[Project:討論頁|討論頁]]'));
 		page.setChangeTags(Twinkle.changeTags);
 		page.deletePage();
 	},

@@ -9,7 +9,7 @@
  *** twinkleunlink.js: Unlink module
  ****************************************
  * Mode of invocation:     Tab ("Unlink")
- * Active on:              Non-special pages, except Wikipedia:Sandbox
+ * Active on:              Non-special pages, except Project:Sandbox
  */
 
 Twinkle.unlink = function twinkleunlink() {

@@ -34,7 +34,7 @@ Twinkle.batchdelete.callback = function twinklebatchdeleteCallback() {
 	var Window = new Morebits.simpleWindow(600, 400);
 	Window.setTitle(wgULS('批量删除', '批次刪除'));
 	Window.setScriptName('Twinkle');
-	Window.addFooterLink(wgULS('Twinkle帮助', 'Twinkle說明'), 'WP:TW/DOC#batchdelete');
+	Window.addFooterLink(wgULS('Twinkle帮助', 'Twinkle說明'), 'PROJ:TW/DOC#batchdelete');
 
 	var form = new Morebits.quickForm(Twinkle.batchdelete.callback.evaluate);
 	form.append({
@@ -295,39 +295,39 @@ Twinkle.batchdelete.deletereasonlist = [
 	},
 	{
 		label: wgULS('G10: 原作者清空页面或提出删除，且实际贡献者只有一人', 'G10: 原作者清空頁面或提出刪除，且實際貢獻者只有一人'),
-		value: wgULS('[[Wikipedia:CSD#G10|G10]]: 原作者清空页面或提出删除，且实际贡献者只有一人', '[[Wikipedia:CSD#G10|G10]]: 原作者清空頁面或提出刪除，且實際貢獻者只有一人')
+		value: wgULS('[[Project:CSD#G10|G10]]: 原作者清空页面或提出删除，且实际贡献者只有一人', '[[Project:CSD#G10|G10]]: 原作者清空頁面或提出刪除，且實際貢獻者只有一人')
 	},
 	{
 		label: wgULS('G15: 孤立页面，比如没有主页面的讨论页、指向空页面的重定向等', 'G15: 孤立頁面，比如沒有主頁面的討論頁、指向空頁面的重新導向等'),
-		value: wgULS('[[Wikipedia:CSD#G15|G15]]: 孤立页面', '[[Wikipedia:CSD#G15|G15]]: 孤立頁面')
+		value: wgULS('[[Project:CSD#G15|G15]]: 孤立页面', '[[Project:CSD#G15|G15]]: 孤立頁面')
 	},
 	{
 		label: wgULS('F6: 没有被条目使用的非自由著作权文件', 'F6: 沒有被條目使用的非自由著作權檔案'),
-		value: wgULS('[[Wikipedia:CSD#F6|F6]]: 没有被条目使用的[[Wikipedia:合理使用|非自由著作权]]文件', '[[Wikipedia:CSD#F6|F6]]: 沒有被條目使用的[[Wikipedia:合理使用|非自由著作權]]檔案')
+		value: wgULS('[[Project:CSD#F6|F6]]: 没有被条目使用的[[Project:合理使用|非自由著作权]]文件', '[[Project:CSD#F6|F6]]: 沒有被條目使用的[[Project:合理使用|非自由著作權]]檔案')
 	},
 	{
 		label: wgULS('F7: 与维基共享资源文件重复的文件', 'F7: 與維基共享資源檔案重複的檔案'),
-		value: wgULS('[[Wikipedia:CSD#F7|F7]]: 与[[维基共享资源]]文件重复的文件', '[[Wikipedia:CSD#F7|F7]]: 與[[維基共享資源]]檔案重複的檔案')
+		value: wgULS('[[Project:CSD#F7|F7]]: 与[[维基共享资源]]文件重复的文件', '[[Project:CSD#F7|F7]]: 與[[維基共享資源]]檔案重複的檔案')
 	},
 	{
 		label: wgULS('F10: 可被替代的非自由著作权文件', 'F10: 可被替代的非自由版權檔案'),
-		value: wgULS('[[Wikipedia:CSD#F10|F10]]: 可被替代的非自由著作权文件', '[[Wikipedia:CSD#F10|F10]]: 可被替代的非自由版權檔案')
+		value: wgULS('[[Project:CSD#F10|F10]]: 可被替代的非自由著作权文件', '[[Project:CSD#F10|F10]]: 可被替代的非自由版權檔案')
 	},
 	{
 		label: wgULS('O1: 用户请求删除自己的用户页或其子页面', 'O1: 使用者請求刪除自己的使用者頁面或其子頁面'),
-		value: wgULS('[[Wikipedia:CSD#O1|O1]]: 用户请求删除自己的[[Help:用户页|用户页]]或其子页面。', '[[Wikipedia:CSD#O1|O1]]: 使用者請求刪除自己的[[Help:用户页|使用者頁面]]或其子頁面。')
+		value: wgULS('[[Project:CSD#O1|O1]]: 用户请求删除自己的[[Help:用户页|用户页]]或其子页面。', '[[Project:CSD#O1|O1]]: 使用者請求刪除自己的[[Help:用户页|使用者頁面]]或其子頁面。')
 	},
 	{
 		label: wgULS('O4: 空的分类（没有条目也没有子分类）', 'O4: 空的分類（沒有條目也沒有子分類）'),
-		value: wgULS('[[Wikipedia:CSD#O4|O4]]: 空的分类（没有条目也没有子分类）。', '[[Wikipedia:CSD#O4|O4]]: 空的分類（沒有條目也沒有子分類）。')
+		value: wgULS('[[Project:CSD#O4|O4]]: 空的分类（没有条目也没有子分类）。', '[[Project:CSD#O4|O4]]: 空的分類（沒有條目也沒有子分類）。')
 	},
 	{
 		label: wgULS('O7: 废弃草稿', 'O7: 廢棄草稿'),
-		value: wgULS('[[Wikipedia:CSD#O7|O7]]: 废弃草稿。', '[[Wikipedia:CSD#O7|O7]]: 廢棄草稿。')
+		value: wgULS('[[Project:CSD#O7|O7]]: 废弃草稿。', '[[Project:CSD#O7|O7]]: 廢棄草稿。')
 	},
 	{
 		label: wgULS('R2: 跨命名空间的重定向', 'R2: 跨命名空間的重新導向'),
-		value: wgULS('[[WP:CSD#R2|R2]]: 跨[[H:NS|命名空间]]的[[WP:R|重定向]]', '[[WP:CSD#R2|R2]]: 跨[[H:NS|命名空間]]的[[WP:R|重新導向]]')
+		value: wgULS('[[PROJ:CSD#R2|R2]]: 跨[[H:NS|命名空间]]的[[PROJ:R|重定向]]', '[[PROJ:CSD#R2|R2]]: 跨[[H:NS|命名空間]]的[[PROJ:R|重新導向]]')
 	}
 ];
 
@@ -664,7 +664,7 @@ Twinkle.batchdelete.callbacks = {
 		redirectDeleter.setPageList(pages);
 		redirectDeleter.run(function(pageName) {
 			var wikipedia_page = new Morebits.wiki.page(pageName, wgULS('正在删除 ', '正在刪除 ') + pageName);
-			wikipedia_page.setEditSummary('[[WP:CSD#G15|G15]]: ' + wgULS('指向已删页面“', '指向已刪頁面「') + apiobj.params.page + wgULS('”的重定向', '」的重新導向'));
+			wikipedia_page.setEditSummary('[[PROJ:CSD#G15|G15]]: ' + wgULS('指向已删页面“', '指向已刪頁面「') + apiobj.params.page + wgULS('”的重定向', '」的重新導向'));
 			wikipedia_page.setChangeTags(Twinkle.changeTags);
 			wikipedia_page.deletePage(redirectDeleter.workerSuccess, redirectDeleter.workerFailure);
 		});
@@ -679,7 +679,7 @@ Twinkle.batchdelete.callbacks = {
 		}
 
 		var page = new Morebits.wiki.page(apiobj.params.talkPage, wgULS('正在删除页面 ', '正在刪除頁面 ') + apiobj.params.page + wgULS(' 的讨论页', ' 的討論頁'));
-		page.setEditSummary('[[WP:CSD#G15|G15]]: ' + wgULS('已删页面“', '已刪頁面「') + apiobj.params.page + wgULS('”的[[Wikipedia:讨论页|讨论页]]', '」的[[Wikipedia:討論頁|討論頁]]'));
+		page.setEditSummary('[[PROJ:CSD#G15|G15]]: ' + wgULS('已删页面“', '已刪頁面「') + apiobj.params.page + wgULS('”的[[Project:讨论页|讨论页]]', '」的[[Project:討論頁|討論頁]]'));
 		page.setChangeTags(Twinkle.changeTags);
 		page.deletePage();
 	},

@@ -99,8 +99,8 @@ Twinkle.config.commonSets = {
 		1: 'Talk',
 		2: 'User',
 		3: 'User talk',
-		4: 'Wikipedia',
-		5: 'Wikipedia talk',
+		4: 'Project',
+		5: 'Project talk',
 		6: 'File',
 		7: 'File talk',
 		8: 'MediaWiki',
@@ -119,6 +119,7 @@ Twinkle.config.commonSets = {
 		119: 'Draft talk',
 		828: 'Module',
 		829: 'Module talk'
+
 	}
 };
 

@@ -17,6 +17,8 @@ def normalizeTitle(title):
     title = title[0].upper() + title[1:]
     if title.startswith('Wikipedia:'):
         pass
+    elif title.startswith('Project:') or title.startswith('红砖维基:'):
+        pass
     elif not title.startswith('Template:'):
         title = 'Template:' + title
     if title in redirectTable:

@@ -32,7 +32,7 @@ for idx in range(0, len(templates), 50):
         'redirects': 1,
         'converttitles': 1,
     }
-    r = requests.post('https://zh.wikipedia.org/w/api.php', data=data)
+    r = requests.post('https://321nails.crpteam.club/w/api.php', data=data) # r = requests.post('https://zh.wikipedia.org/w/api.php', data=data)
     result = r.json()
     result = result['query']
     for key in ['normalized', 'converted', 'redirects']:

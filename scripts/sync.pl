@@ -31,7 +31,7 @@ my %conf = (
             lang => 'zh',
             family => 'wikipedia',
             url => q{},
-            base => 'User:Xiplus/'
+            base => 'User:Creeper19472/'
            );
 
 my $rc = '.twinklerc';
@@ -204,7 +204,8 @@ sub forReal {
   }
 
   # Set base URL for the project, used for API, etc.
-  $conf{url} ||= "https://$conf{lang}.$conf{family}.org";
+  # $conf{url} ||= "https://$conf{lang}.$conf{family}.org";
+  $conf{url} ||= "https://321nails.crpteam.club";
 
   my @inputs;
   my @allFiles = map { split } <DATA>;

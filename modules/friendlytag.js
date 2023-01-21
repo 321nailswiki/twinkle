@@ -41,8 +41,8 @@ Twinkle.tag.checkedTags = [];
 Twinkle.tag.callback = function friendlytagCallback() {
 	var Window = new Morebits.simpleWindow(630, Twinkle.tag.modeEn === 'article' ? 500 : 400);
 	Window.setScriptName('Twinkle');
-	Window.addFooterLink(wgULS('标记设置', '標記設定'), 'WP:TW/PREF#tag');
-	Window.addFooterLink(wgULS('Twinkle帮助', 'Twinkle說明'), 'WP:TW/DOC#tag');
+	Window.addFooterLink(wgULS('标记设置', '標記設定'), 'PROJ:TW/PREF#tag');
+	Window.addFooterLink(wgULS('Twinkle帮助', 'Twinkle說明'), 'PROJ:TW/DOC#tag');
 
 	var form = new Morebits.quickForm(Twinkle.tag.callback.evaluate);
 
@@ -113,7 +113,7 @@ Twinkle.tag.callback = function friendlytagCallback() {
 				type: 'select',
 				name: 'sortorder',
 				label: wgULS('查看列表：', '檢視列表：'),
-				tooltip: wgULS('您可以在Twinkle参数设置（WP:TWPREFS）中更改此项。', '您可以在Twinkle偏好設定（WP:TWPREFS）中更改此項。'),
+				tooltip: wgULS('您可以在Twinkle参数设置（PROJ:TWPREFS）中更改此项。', '您可以在Twinkle偏好設定（PROJ:TWPREFS）中更改此項。'),
 				event: Twinkle.tag.updateSortOrder,
 				list: [
 					{ type: 'option', value: 'cat', label: wgULS('按类型', '按類別'), selected: Twinkle.getPref('tagArticleSortOrder') === 'cat' },
@@ -1327,7 +1327,7 @@ Twinkle.tag.callbacks = {
 			// regex check for preexistence of tag can be skipped if in canRemove mode
 			if (Twinkle.tag.canRemove || !tagRe.exec(pageText)) {
 				if (tag === 'Notability' && (mw.config.get('wgNamespaceNumber') === 0 || confirm(wgULS('该页面不是条目，您仍要提报到关注度提报吗？', '該頁面不是條目，您仍要提報到關注度提報嗎？')))) {
-					var wikipedia_page = new Morebits.wiki.page('Wikipedia:关注度/提报', wgULS('加入关注度记录项', '加入關注度記錄項'));
+					var wikipedia_page = new Morebits.wiki.page('Project:关注度/提报', wgULS('加入关注度记录项', '加入關注度記錄項'));
 					wikipedia_page.setFollowRedirect(true);
 					wikipedia_page.setCallbackParameters(params);
 					wikipedia_page.load(Twinkle.tag.callbacks.notabilityList);
