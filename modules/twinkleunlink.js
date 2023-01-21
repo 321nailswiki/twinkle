@@ -26,8 +26,8 @@ Twinkle.unlink.callback = function(presetReason) {
 	var Window = new Morebits.simpleWindow(600, 440);
 	Window.setTitle(wgULS('取消链入', '取消連入') + (fileSpace ? wgULS('和文件使用', '和檔案使用') : ''));
 	Window.setScriptName('Twinkle');
-	Window.addFooterLink(wgULS('链入设置', '連入設定'), 'WP:TW/PREF#unlink');
-	Window.addFooterLink(wgULS('Twinkle帮助', 'Twinkle說明'), 'WP:TW/DOC#unlink');
+	Window.addFooterLink(wgULS('链入设置', '連入設定'), 'PROJ:TW/PREF#unlink');
+	Window.addFooterLink(wgULS('Twinkle帮助', 'Twinkle說明'), 'PROJ:TW/DOC#unlink');
 
 	var form = new Morebits.quickForm(Twinkle.unlink.callback.evaluate);
 
@@ -157,7 +157,7 @@ Twinkle.unlink.callbacks = {
 					apiobj.params.form.append({
 						type: 'div',
 						label: wgULS('已选择的命名空间：', '已選擇的命名空間：') + namespaces.join('、'),
-						tooltip: wgULS('您可在Twinkle属性中更改这个，请参见[[WP:TWPREFS]]', '您可在Twinkle屬性中更改這個，請參見[[WP:TWPREFS]]')
+						tooltip: wgULS('您可在Twinkle属性中更改这个，请参见[[PROJ:TWPREFS]]', '您可在Twinkle屬性中更改這個，請參見[[PROJ:TWPREFS]]')
 					});
 					if (response['query-continue'] && response['query-continue'].imageusage) {
 						apiobj.params.form.append({
@@ -204,7 +204,7 @@ Twinkle.unlink.callbacks = {
 				apiobj.params.form.append({
 					type: 'div',
 					label: wgULS('已选择的命名空间：', '已選擇的命名空間：') + namespaces.join('、'),
-					tooltip: wgULS('您可在Twinkle属性中更改这个，请参见[[WP:TWPREFS]]', '您可在Twinkle屬性中更改這個，請參見[[WP:TWPREFS]]')
+					tooltip: wgULS('您可在Twinkle属性中更改这个，请参见[[PROJ:TWPREFS]]', '您可在Twinkle屬性中更改這個，請參見[[PROJ:TWPREFS]]')
 				});
 				if (response['query-continue'] && response['query-continue'].backlinks) {
 					apiobj.params.form.append({

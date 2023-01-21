@@ -121,9 +121,9 @@ Twinkle.warn.callback = function twinklewarnCallback() {
 	dialog = Twinkle.warn.dialog;
 	dialog.setTitle(wgULS('警告、提醒用户', '警告、提醒使用者'));
 	dialog.setScriptName('Twinkle');
-	dialog.addFooterLink(wgULS('选择警告级别', '選擇警告級別'), 'WP:WARN');
-	dialog.addFooterLink(wgULS('警告设置', '警告設定'), 'WP:TW/PREF#warn');
-	dialog.addFooterLink(wgULS('Twinkle帮助', 'Twinkle說明'), 'WP:TW/DOC#warn');
+	dialog.addFooterLink(wgULS('选择警告级别', '選擇警告級別'), 'PROJ:WARN');
+	dialog.addFooterLink(wgULS('警告设置', '警告設定'), 'PROJ:TW/PREF#warn');
+	dialog.addFooterLink(wgULS('Twinkle帮助', 'Twinkle說明'), 'PROJ:TW/DOC#warn');
 
 	var form = new Morebits.quickForm(Twinkle.warn.callback.evaluate);
 	var main_select = form.append({
@@ -546,20 +546,20 @@ Twinkle.warn.messages = wgULS({
 			},
 			'uw-advert': {
 				level1: {
-					label: '利用维基百科来发布广告或推广',
-					summary: '提醒：利用维基百科来发布广告或推广'
+					label: '利用红砖维基来发布广告或推广',
+					summary: '提醒：利用红砖维基来发布广告或推广'
 				},
 				level2: {
-					label: '利用维基百科来发布广告或推广',
-					summary: '注意：利用维基百科来发布广告或推广'
+					label: '利用红砖维基来发布广告或推广',
+					summary: '注意：利用红砖维基来发布广告或推广'
 				},
 				level3: {
-					label: '利用维基百科来发布广告或推广',
-					summary: '警告：利用维基百科来发布广告或推广'
+					label: '利用红砖维基来发布广告或推广',
+					summary: '警告：利用红砖维基来发布广告或推广'
 				},
 				level4: {
-					label: '利用维基百科来发布广告或推广',
-					summary: '最后警告：利用维基百科来发布广告或推广'
+					label: '利用红砖维基来发布广告或推广',
+					summary: '最后警告：利用红砖维基来发布广告或推广'
 				}
 			},
 			'uw-npov': {
@@ -2399,7 +2399,7 @@ Twinkle.warn.callbacks = {
 		var template = params.sub_group.replace(/(.*)\d$/, '$1');
 		// Validate warning level, falling back to the uw-generic series.
 		// Only a few items are missing a level, and in all but a handful
-		// of cases, the uw-generic series is explicitly used elsewhere per WP:UTM.
+		// of cases, the uw-generic series is explicitly used elsewhere per PROJ:UTM.
 		if (params.messageData && !params.messageData['level' + level]) {
 			template = 'uw-generic';
 		}

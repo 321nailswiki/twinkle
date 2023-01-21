@@ -33,9 +33,9 @@ Twinkle.protect.callback = function twinkleprotectCallback() {
 	Window.setTitle(Morebits.userIsSysop ? wgULS('施行或请求保护页面', '施行或請求保護頁面') : wgULS('请求保护页面', '請求保護頁面'));
 	Window.setScriptName('Twinkle');
 	Window.addFooterLink(wgULS('保护模板', '保護模板'), 'Template:Protection templates');
-	Window.addFooterLink(wgULS('保护方针', '保護方針'), 'WP:PROT');
-	Window.addFooterLink(wgULS('保护设置', '保護設定'), 'WP:TW/PREF#protect');
-	Window.addFooterLink(wgULS('Twinkle帮助', 'Twinkle說明'), 'WP:TW/DOC#protect');
+	Window.addFooterLink(wgULS('保护方针', '保護方針'), 'PROJ:PROT');
+	Window.addFooterLink(wgULS('保护设置', '保護設定'), 'PROJ:TW/PREF#protect');
+	Window.addFooterLink(wgULS('Twinkle帮助', 'Twinkle說明'), 'PROJ:TW/DOC#protect');
 
 	var form = new Morebits.quickForm(Twinkle.protect.callback.evaluate);
 	var actionfield = form.append({
@@ -64,7 +64,7 @@ Twinkle.protect.callback = function twinkleprotectCallback() {
 			{
 				label: wgULS('请求保护页面', '請求保護頁面'),
 				value: 'request',
-				tooltip: wgULS('如果您想在WP:RFPP请求保护此页', '如果您想在WP:RFPP請求保護此頁') + (Morebits.userIsSysop ? '而不是自行完成。' : '。'),
+				tooltip: wgULS('如果您想在PROJ:RFPP请求保护此页', '如果您想在PROJ:RFPP請求保護此頁') + (Morebits.userIsSysop ? '而不是自行完成。' : '。'),
 				checked: !Morebits.userIsSysop
 			},
 			{
@@ -303,7 +303,7 @@ Twinkle.protect.callback.changeAction = function twinkleprotectCallbackChangeAct
 					label: wgULS('创建权限：', '建立權限：'),
 					event: Twinkle.protect.formevents.createlevel,
 					list: Twinkle.protect.protectionLevels.filter(function(level) {
-						// Filter TE always, and autoconfirmed in mainspace, redundant since WP:ACPERM
+						// Filter TE always, and autoconfirmed in mainspace, redundant since PROJ:ACPERM
 						return level.value !== 'templateeditor';
 					})
 				});
@@ -600,7 +600,7 @@ Twinkle.protect.protectionPresetsInfo = {
 		edit: 'templateeditor',
 		move: 'templateeditor',
 		expiry: 'infinity',
-		reason: wgULS('[[WP:HRT|高风险模板]]', '[[WP:HRT|高風險模板]]'),
+		reason: wgULS('[[PROJ:HRT|高风险模板]]', '[[PROJ:HRT|高風險模板]]'),
 		template: 'noop'
 	},
 	'pp-vandalism': {
@@ -635,7 +635,7 @@ Twinkle.protect.protectionPresetsInfo = {
 	'pp-semi-template': {  // removed for now
 		edit: 'autoconfirmed',
 		expiry: 'infinity',
-		reason: wgULS('[[WP:HRT|高风险模板]]', '[[WP:HRT|高風險模板]]'),
+		reason: wgULS('[[PROJ:HRT|高风险模板]]', '[[PROJ:HRT|高風險模板]]'),
 		template: 'noop'
 	},
 	'pp-semi-sock': {
@@ -878,7 +878,7 @@ Twinkle.protect.callback.evaluate = function twinkleprotectCallbackEvaluate(e) {
 					Twinkle.protect.callbacks.taggingPageInitial(tagparams);
 				}
 				if (closeparams && closeparams.type) {
-					var rppPage = new Morebits.wiki.page('Wikipedia:请求保护页面', wgULS('关闭请求', '關閉請求'));
+					var rppPage = new Morebits.wiki.page('Project:请求保护页面', wgULS('关闭请求', '關閉請求'));
 					rppPage.setFollowRedirect(true);
 					rppPage.setCallbackParameters(closeparams);
 					rppPage.load(Twinkle.protect.callbacks.closeRequest);
@@ -1068,7 +1068,7 @@ Twinkle.protect.callback.evaluate = function twinkleprotectCallbackEvaluate(e) {
 			Morebits.simpleWindow.setButtonsEnabled(false);
 			Morebits.status.init(form);
 
-			var rppName = 'Wikipedia:请求保护页面';
+			var rppName = 'Project:请求保护页面';
 
 			// Updating data for the action completed event
 			Morebits.wiki.actionCompleted.redirect = rppName;
@@ -1244,9 +1244,9 @@ Twinkle.protect.callbacks = {
 		text = text.replace(reg, '$1\n' + newtag + '\n');
 		if (text.length === originalTextLength) {
 			var linknode = document.createElement('a');
-			linknode.setAttribute('href', mw.util.getUrl('Wikipedia:Twinkle/修复RFPP'));
+			linknode.setAttribute('href', mw.util.getUrl('Project:Twinkle/修复RFPP'));
 			linknode.appendChild(document.createTextNode(wgULS('如何修复RFPP', '如何修復RFPP')));
-			statusElement.error([wgULS('无法在WP:RFPP上找到相关定位点标记，要修复此问题，请参见', '無法在WP:RFPP上找到相關定位點標記，要修復此問題，請參見'), linknode, '。']);
+			statusElement.error([wgULS('无法在PROJ:RFPP上找到相关定位点标记，要修复此问题，请参见', '無法在PROJ:RFPP上找到相關定位點標記，要修復此問題，請參見'), linknode, '。']);
 			return;
 		}
 		statusElement.status('加入新提名…');
@@ -1285,9 +1285,9 @@ Twinkle.protect.callbacks = {
 
 		if (sections.length !== 2) {
 			var linknode2 = document.createElement('a');
-			linknode2.setAttribute('href', mw.util.getUrl('Wikipedia:Twinkle/修复RFPP'));
+			linknode2.setAttribute('href', mw.util.getUrl('Project:Twinkle/修复RFPP'));
 			linknode2.appendChild(document.createTextNode('如何修复RFPP'));
-			statusElement.error([wgULS('无法在WP:RFPP上找到相关定位点标记，要修复此问题，请参见', '無法在WP:RFPP上找到相關定位點標記，要修復此問題，請參見'), linknode2, '。']);
+			statusElement.error([wgULS('无法在PROJ:RFPP上找到相关定位点标记，要修复此问题，请参见', '無法在PROJ:RFPP上找到相關定位點標記，要修復此問題，請參見'), linknode2, '。']);
 			return;
 		}
 

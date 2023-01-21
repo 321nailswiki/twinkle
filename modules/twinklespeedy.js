@@ -84,10 +84,10 @@ Twinkle.speedy.initDialog = function twinklespeedyInitDialog(callbackfunc) {
 	dialog = Twinkle.speedy.dialog;
 	dialog.setTitle(wgULS('选择快速删除理由', '選擇快速刪除理由'));
 	dialog.setScriptName('Twinkle');
-	dialog.addFooterLink(wgULS('快速删除方针', '快速刪除方針'), 'WP:CSD');
-	dialog.addFooterLink(wgULS('常见错误', '常見錯誤'), 'Wikipedia:管理员错误自查表/快速删除');
-	dialog.addFooterLink(wgULS('速删设置', '速刪設定'), 'WP:TW/PREF#speedy');
-	dialog.addFooterLink(wgULS('Twinkle帮助', 'Twinkle說明'), 'WP:TW/DOC#speedy');
+	dialog.addFooterLink(wgULS('快速删除方针', '快速刪除方針'), 'PROJ:CSD');
+	dialog.addFooterLink(wgULS('常见错误', '常見錯誤'), 'Project:管理员错误自查表/快速删除');
+	dialog.addFooterLink(wgULS('速删设置', '速刪設定'), 'PROJ:TW/PREF#speedy');
+	dialog.addFooterLink(wgULS('Twinkle帮助', 'Twinkle說明'), 'PROJ:TW/DOC#speedy');
 
 	var form = new Morebits.quickForm(callbackfunc, Twinkle.getPref('speedySelectionStyle') === 'radioClick' ? 'change' : null);
 	if (Morebits.userIsSysop) {
@@ -439,7 +439,7 @@ Twinkle.speedy.callback.modeChanged = function twinklespeedyCallbackModeChanged(
 			wgULS('Twinkle不支持在页面内容模型为', 'Twinkle不支援在頁面內容模型為'),
 			mw.config.get('wgPageContentModel'),
 			wgULS('的页面上挂上快速删除模板，请参见', '的頁面上掛上快速刪除模板，請參見'),
-			$('<a>').attr({ target: '_blank', href: mw.util.getUrl('WP:SPECIALSD') }).text(wgULS('手动放置模板时的注意事项', '手動放置模板時的注意事項'))[0],
+			$('<a>').attr({ target: '_blank', href: mw.util.getUrl('PROJ:SPECIALSD') }).text(wgULS('手动放置模板时的注意事项', '手動放置模板時的注意事項'))[0],
 			'。'
 		];
 		$('[name=work_area]').append(message);
@@ -767,7 +767,7 @@ Twinkle.speedy.generalList = [
 	{
 		label: wgULS('G1: 没有实际内容的页面', 'G1: 沒有實際內容的頁面'),
 		value: 'g1',
-		tooltip: wgULS('如“adfasddd”。参见Wikipedia:胡言乱语。但注意：图片也算是内容。', '如「adfasddd」。參見Wikipedia:胡言亂語。但注意：圖片也算是內容。'),
+		tooltip: wgULS('如“adfasddd”。参见Project:胡言乱语。但注意：图片也算是内容。', '如「adfasddd」。參見Project:胡言亂語。但注意：圖片也算是內容。'),
 		hideInNamespaces: [ 2, 3 ] // user, user talk
 	},
 	{
@@ -1057,7 +1057,7 @@ Twinkle.speedy.callbacks = {
 					params.normalized !== 'o1' &&
 					!document.getElementById('ca-talk').classList.contains('new')) {
 				var talkpage = new Morebits.wiki.page(mw.config.get('wgFormattedNamespaces')[mw.config.get('wgNamespaceNumber') + 1] + ':' + mw.config.get('wgTitle'), wgULS('删除讨论页', '刪除討論頁'));
-				talkpage.setEditSummary('[[WP:CSD#G15|G15]]: 孤立页面: 已删除页面“' + Morebits.pageNameNorm + '”的讨论页');
+				talkpage.setEditSummary('[[PROJ:CSD#G15|G15]]: 孤立页面: 已删除页面“' + Morebits.pageNameNorm + '”的讨论页');
 				talkpage.setChangeTags(Twinkle.changeTags);
 				talkpage.deletePage();
 				// this is ugly, but because of the architecture of wiki.api, it is needed
@@ -1224,7 +1224,7 @@ Twinkle.speedy.callbacks = {
 			$snapshot.each(function(key, value) {
 				var title = $(value).attr('title');
 				var page = new Morebits.wiki.page(title, wgULS('删除重定向 "', '刪除重新導向 "') + title + '"');
-				page.setEditSummary('[[WP:CSD#G15|G15]]: 孤立页面: 重定向到已删除页面“' + Morebits.pageNameNorm + '”');
+				page.setEditSummary('[[PROJ:CSD#G15|G15]]: 孤立页面: 重定向到已删除页面“' + Morebits.pageNameNorm + '”');
 				page.setChangeTags(Twinkle.changeTags);
 				page.deletePage(onsuccess);
 			});
@@ -1296,15 +1296,15 @@ Twinkle.speedy.callbacks = {
 				editsummary = wgULS('请求快速删除（', '請求快速刪除（');
 				$.each(params.normalizeds, function(index, norm) {
 					if (norm !== 'db') {
-						editsummary += '[[WP:CSD#' + norm.toUpperCase() + '|CSD ' + norm.toUpperCase() + ']]、';
+						editsummary += '[[PROJ:CSD#' + norm.toUpperCase() + '|CSD ' + norm.toUpperCase() + ']]、';
 					}
 				});
 				editsummary = editsummary.substr(0, editsummary.length - 1); // remove trailing comma
 				editsummary += '）';
 			} else if (params.normalizeds[0] === 'db') {
-				editsummary = wgULS('请求[[WP:CSD|快速删除]]：', '請求[[WP:CSD|快速刪除]]：') + params.templateParams[0]['1'];
+				editsummary = wgULS('请求[[PROJ:CSD|快速删除]]：', '請求[[PROJ:CSD|快速刪除]]：') + params.templateParams[0]['1'];
 			} else {
-				editsummary = wgULS('请求快速删除', '請求快速刪除') + '（[[WP:CSD#' + params.normalizeds[0].toUpperCase() + '|CSD ' + params.normalizeds[0].toUpperCase() + ']]）';
+				editsummary = wgULS('请求快速删除', '請求快速刪除') + '（[[PROJ:CSD#' + params.normalizeds[0].toUpperCase() + '|CSD ' + params.normalizeds[0].toUpperCase() + ']]）';
 			}
 
 
@@ -1399,30 +1399,30 @@ Twinkle.speedy.callbacks = {
 		addToLog: function(params, initialContrib) {
 			var usl = new Morebits.userspaceLogger(Twinkle.getPref('speedyLogPageName'));
 			usl.initialText =
-				'这是该用户使用[[WP:TW|Twinkle]]的速删模块做出的[[WP:CSD|快速删除]]提名列表。\n\n' +
+				'这是该用户使用[[PROJ:TW|Twinkle]]的速删模块做出的[[PROJ:CSD|快速删除]]提名列表。\n\n' +
 				'如果您不再想保留此日志，请在[[' + Twinkle.getPref('configPage') + '|参数设置]]中关掉，并' +
-				'使用[[WP:CSD#O1|CSD O1]]提交快速删除。' +
+				'使用[[PROJ:CSD#O1|CSD O1]]提交快速删除。' +
 				(Morebits.userIsSysop ? '\n\n此日志并不记录用Twinkle直接执行的删除。' : '');
 
 			var appendText = '# [[:' + Morebits.pageNameNorm + ']]：';
 			if (params.fromDI) {
 				if (params.normalized === 'f3 f4') {
-					appendText += '图版[[WP:CSD#F3|CSD F3]]+[[WP:CSD#F4|CSD F4]]（{{tl|no source no license/auto}}）';
+					appendText += '图版[[PROJ:CSD#F3|CSD F3]]+[[PROJ:CSD#F4|CSD F4]]（{{tl|no source no license/auto}}）';
 				} else {
-					appendText += '图版[[WP:CSD#' + params.normalized.toUpperCase() + '|CSD ' + params.normalized.toUpperCase() + ']]（{{tl|' + params.templatename + '}}）';
+					appendText += '图版[[PROJ:CSD#' + params.normalized.toUpperCase() + '|CSD ' + params.normalized.toUpperCase() + ']]（{{tl|' + params.templatename + '}}）';
 				}
 			} else {
 				if (params.normalizeds.length > 1) {
 					appendText += '多个理由（';
 					$.each(params.normalizeds, function(index, norm) {
-						appendText += '[[WP:CSD#' + norm.toUpperCase() + '|' + norm.toUpperCase() + ']]、';
+						appendText += '[[PROJ:CSD#' + norm.toUpperCase() + '|' + norm.toUpperCase() + ']]、';
 					});
 					appendText = appendText.substr(0, appendText.length - 1);  // remove trailing comma
 					appendText += '）';
 				} else if (params.normalizeds[0] === 'db') {
 					appendText += '自定义理由';
 				} else {
-					appendText += '[[WP:CSD#' + params.normalizeds[0].toUpperCase() + '|CSD ' + params.normalizeds[0].toUpperCase() + ']]';
+					appendText += '[[PROJ:CSD#' + params.normalizeds[0].toUpperCase() + '|CSD ' + params.normalizeds[0].toUpperCase() + ']]';
 				}
 			}
 
@@ -1485,8 +1485,8 @@ Twinkle.speedy.getParameters = function twinklespeedyGetParameters(form, values)
 				if (form['csd.g5_1']) {
 					var deldisc = form['csd.g5_1'].value;
 					if (deldisc) {
-						if (!/^(Wikipedia|WP|维基百科|維基百科):/i.test(deldisc)) {
-							alert(wgULS('CSD G5：您提供的讨论页名必须以“Wikipedia:”开头。', 'CSD G5：您提供的討論頁名必須以「Wikipedia:」開頭。'));
+						if (!/^(Project|PROJ|红砖维基):/i.test(deldisc)) {
+							alert(wgULS('CSD G5：您提供的讨论页名必须以“Project:”开头。', 'CSD G5：您提供的討論頁名必須以「Project:」開頭。'));
 							parameters = null;
 							return false;
 						}

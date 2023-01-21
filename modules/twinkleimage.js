@@ -25,9 +25,9 @@ Twinkle.image.callback = function twinkleimageCallback() {
 	var Window = new Morebits.simpleWindow(600, 330);
 	Window.setTitle(wgULS('文件快速删除候选', '檔案快速刪除候選'));
 	Window.setScriptName('Twinkle');
-	Window.addFooterLink(wgULS('快速删除方针', '快速刪除方針'), 'WP:CSD');
-	Window.addFooterLink(wgULS('图权设置', '圖權設定'), 'WP:TW/PREF#image');
-	Window.addFooterLink(wgULS('Twinkle帮助', 'Twinkle說明'), 'WP:TW/DOC#image');
+	Window.addFooterLink(wgULS('快速删除方针', '快速刪除方針'), 'PROJ:CSD');
+	Window.addFooterLink(wgULS('图权设置', '圖權設定'), 'PROJ:TW/PREF#image');
+	Window.addFooterLink(wgULS('Twinkle帮助', 'Twinkle說明'), 'PROJ:TW/DOC#image');
 
 	var form = new Morebits.quickForm(Twinkle.image.callback.evaluate);
 	form.append({
@@ -223,7 +223,7 @@ Twinkle.image.callbacks = {
 		text = text.replace(/\{\{(mtc|(copy |move )?to ?commons|move to wikimedia commons|copy to wikimedia commons)[^}]*\}\}/gi, '');
 		// Adding discussion
 		if (params.type !== 'orphaned fair use') {
-			var wikipedia_page = new Morebits.wiki.page('Wikipedia:檔案存廢討論/快速刪除提報', wgULS('加入快速删除记录项', '加入快速刪除記錄項'));
+			var wikipedia_page = new Morebits.wiki.page('Project:檔案存廢討論/快速刪除提報', wgULS('加入快速删除记录项', '加入快速刪除記錄項'));
 			wikipedia_page.setFollowRedirect(true);
 			wikipedia_page.setCallbackParameters(params);
 			wikipedia_page.load(Twinkle.image.callbacks.imageList);
@@ -254,9 +254,9 @@ Twinkle.image.callbacks = {
 
 		var editSummary = wgULS('请求快速删除（', '請求快速刪除（');
 		if (params.normalized === 'f3 f4') {
-			editSummary += '[[WP:CSD#F3|CSD F3]]+[[WP:CSD#F4|CSD F4]]';
+			editSummary += '[[PROJ:CSD#F3|CSD F3]]+[[PROJ:CSD#F4|CSD F4]]';
 		} else {
-			editSummary += '[[WP:CSD#' + params.normalized.toUpperCase() + '|CSD ' + params.normalized.toUpperCase() + ']]';
+			editSummary += '[[PROJ:CSD#' + params.normalized.toUpperCase() + '|CSD ' + params.normalized.toUpperCase() + ']]';
 		}
 		editSummary += '）';
 		pageobj.setEditSummary(editSummary);

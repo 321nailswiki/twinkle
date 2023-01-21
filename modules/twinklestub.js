@@ -28,8 +28,8 @@ Twinkle.stub.callback = function friendlytagCallback() {
 	var Window = new Morebits.simpleWindow(630, Twinkle.stub.mode === 'article' ? 450 : 400);
 	Window.setScriptName('Twinkle');
 	Window.addFooterLink('小作品說明', 'Wikipedia:小作品');
-	Window.addFooterLink(wgULS('小作品设置', '小作品設定'), 'WP:TW/PREF#stub');
-	Window.addFooterLink(wgULS('Twinkle帮助', 'Twinkle說明'), 'WP:TW/DOC#stub');
+	Window.addFooterLink(wgULS('小作品设置', '小作品設定'), 'PROJ:TW/PREF#stub');
+	Window.addFooterLink(wgULS('Twinkle帮助', 'Twinkle說明'), 'PROJ:TW/DOC#stub');
 
 	var form = new Morebits.quickForm(Twinkle.stub.callback.evaluate);
 
@@ -56,7 +56,7 @@ Twinkle.stub.callback = function friendlytagCallback() {
 				type: 'select',
 				name: 'sortorder',
 				label: wgULS('查看列表：', '檢視列表：'),
-				tooltip: wgULS('您可以在Twinkle参数设置（WP:TWPREFS）中更改此项。', '您可以在Twinkle偏好設定（WP:TWPREFS）中更改此項。'),
+				tooltip: wgULS('您可以在Twinkle参数设置（PROJ:TWPREFS）中更改此项。', '您可以在Twinkle偏好設定（PROJ:TWPREFS）中更改此項。'),
 				event: Twinkle.stub.updateSortOrder,
 				list: [
 					{ type: 'option', value: 'cat', label: wgULS('按类型', '按類別'), selected: Twinkle.getPref('stubArticleSortOrder') === 'cat' },

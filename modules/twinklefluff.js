@@ -641,7 +641,7 @@ Twinkle.fluff.callbacks = {
 				}
 				userHasAlreadyConfirmedAction = true;
 
-				summary = Twinkle.fluff.formatSummary(wgULS('回退$USER做出的出于[[WP:AGF|善意]]的编辑', '回退$USER做出的出於[[WP:AGF|善意]]的編輯'),
+				summary = Twinkle.fluff.formatSummary(wgULS('回退$USER做出的出于[[PROJ:AGF|善意]]的编辑', '回退$USER做出的出於[[PROJ:AGF|善意]]的編輯'),
 					params.userHidden ? null : params.user, extra_summary);
 				break;
 
