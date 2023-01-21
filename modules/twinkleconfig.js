@@ -14,7 +14,7 @@
  * Active on:              What I just said.  Yeah.
 
  I, [[User:This, that and the other]], originally wrote this.  If the code is misbehaving, or you have any
- questions, don't hesitate to ask me.  (This doesn't at all imply [[OWN]]ership - it's just meant to
+ questions, don't hesitate to ask me.  (This doesn't at all imply [[PROJ:OWN]]ership - it's just meant to
  point you in the right direction.)  -- TTO
  */
 
@@ -1853,7 +1853,7 @@ Twinkle.config.saveSuccess = function twinkleconfigSaveSuccess(pageobj) {
 	noticebox.className = 'mw-message-box mw-message-box-success';
 	noticebox.style.fontSize = '100%';
 	noticebox.style.marginTop = '2em';
-	noticebox.innerHTML = '<p><b>' + wgULS('您的Twinkle参数设置已被保存。', '您的Twinkle偏好設定已被儲存。') + '</b></p><p>' + wgULS('要看到这些更改，您可能需要', '要看到這些更改，您可能需要') + '<a href="' + mw.util.getUrl('BYPASS') + '" title="BYPASS"><b>' + wgULS('绕过浏览器缓存', '繞過瀏覽器快取') + '</b></a>。</p>';
+	noticebox.innerHTML = '<p><b>' + wgULS('您的Twinkle参数设置已被保存。', '您的Twinkle偏好設定已被儲存。') + '</b></p><p>' + wgULS('要看到这些更改，您可能需要', '要看到這些更改，您可能需要') + '<a href="' + mw.util.getUrl('PROJ:BYPASS') + '" title="PROJ:BYPASS"><b>' + wgULS('绕过浏览器缓存', '繞過瀏覽器快取') + '</b></a>。</p>';
 	Morebits.status.root.appendChild(noticebox);
 	var noticeclear = document.createElement('br');
 	noticeclear.style.clear = 'both';

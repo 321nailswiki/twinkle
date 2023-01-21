@@ -26,7 +26,7 @@ Twinkle.batchundelete.callback = function twinklebatchundeleteCallback() {
 	var Window = new Morebits.simpleWindow(600, 400);
 	Window.setScriptName('Twinkle');
 	Window.setTitle(wgULS('批量反删除', '批次反刪除'));
-	Window.addFooterLink(wgULS('Twinkle帮助', 'Twinkle說明'), 'TW/DOC#batchundelete');
+	Window.addFooterLink(wgULS('Twinkle帮助', 'Twinkle說明'), 'PROJ:TW/DOC#batchundelete');
 
 	var form = new Morebits.quickForm(Twinkle.batchundelete.callback.evaluate);
 	form.append({
