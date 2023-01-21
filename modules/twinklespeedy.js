@@ -1491,8 +1491,8 @@ Twinkle.speedy.getParameters = function twinklespeedyGetParameters(form, values)
 				if (form['csd.g5_1']) {
 					var deldisc = form['csd.g5_1'].value;
 					if (deldisc) {
-						if (!/^(Project|PROJ|红砖维基):/i.test(deldisc)) {
-							alert(wgULS('CSD G5：您提供的讨论页名必须以“Project:”开头。', 'CSD G5：您提供的討論頁名必須以「Project:」開頭。'));
+						if (!/^(Project|PROJ|红砖维基|红砖維基):/i.test(deldisc)) {
+							alert(wgULS('CSD G5：您提供的讨论页名必须以“红砖维基”开头。', 'CSD G5：您提供的討論頁名必須以「红砖維基:」開頭。'));
 							parameters = null;
 							return false;
 						}
