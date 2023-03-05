@@ -208,8 +208,8 @@ WHITELIST = set([
     'Template:No talkback',
     # tag
     'Template:Multiple issues',
-	# speedy
-	'Template:Salt',
+    # speedy
+    'Template:Salt',
     # warn
     'Template:Uw-generic',
 ])
