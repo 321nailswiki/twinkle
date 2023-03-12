@@ -1219,8 +1219,8 @@ Twinkle.block.blockPresetsInfo = {
 		expiry: '1 day',
 		nocreate: true,
 		pageParam: true,
-		reason: wgULS('屡次增加没有[[WP:RS|可靠来源]]的资料', '屢次增加沒有[[WP:RS|可靠來源]]的資料'),
-		summary: wgULS('封禁通知：屡次增加没有[[WP:RS|可靠来源]]的资料', '封鎖通知：屢次增加沒有[[WP:RS|可靠來源]]的資料'),
+		reason: wgULS('屡次增加没有[[PROJ:RS|可靠来源]]的资料', '屢次增加沒有[[PROJ:RS|可靠來源]]的資料'),
+		summary: wgULS('封禁通知：屡次增加没有[[PROJ:RS|可靠来源]]的资料', '封鎖通知：屢次增加沒有[[PROJ:RS|可靠來源]]的資料'),
 		templateName: 'uw-block'
 	},
 	'uw-ublock-wellknown': {

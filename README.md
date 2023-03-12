@@ -4,7 +4,7 @@ Twinkle是维基人用于快速执行常见维护工作（如提交删除候选�
 
 它构建于已被许多维基百科脚本和编辑工具使用的`morebits.js`库之上。
 
-查看中文维基百科上的[Wikipedia:Twinkle][]以获取更多信息。
+查看红砖维基上的[Project:Twinkle][]以获取更多信息。
 
 [AzaToth][]是本工具和`morebits.js`库的的最初作者和维护者。
 
@@ -17,10 +17,11 @@ Twinkle是维基人用于快速执行常见维护工作（如提交删除候选�
 
 [select2][] is added under the [MIT license][select2license].
 
-[Wikipedia:Twinkle]: https://321nails.crpteam.club/wiki/Project:Twinkle
+[Project:Twinkle]: https://321nails.crpteam.club/wiki/Project:Twinkle
 [Wikipedia:Twinkle]: https://zh.wikipedia.org/wiki/Wikipedia:Twinkle
 [AzaToth]: https://en.wikipedia.org/wiki/User:AzaToth
 [Twinkle文档]: https://zh.wikipedia.org/wiki/Help:Twinkle
 [WP:TWPREFS]: https://zh.wikipedia.org/wiki/WP:TWPREFS
+[PROJ:TWPREFS]: https://321nails.crpteam.club/wiki/PROJ:TWPREFS
 [select2]: https://github.com/select2/select2
 [select2license]: https://github.com/select2/select2/blob/develop/LICENSE.md
