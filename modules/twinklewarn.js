@@ -653,7 +653,29 @@ Twinkle.warn.messages = wgULS({
 					label: '加入诽谤内容',
 					summary: '唯一警告：加入诽谤内容'
 				}
-			}
+			},
+			'uw-esu': {
+				level1: {
+					label: '在生者传记中加入疑似他人未公开的个人信息的内容',
+					summary: '提醒：在生者传记中加入疑似他人未公开的个人信息的内容'
+				},
+				level2: {
+					label: '在生者传记中加入疑似他人未公开的个人信息的内容',
+					summary: '注意：在生者传记中加入疑似他人未公开的个人信息的内容'
+				},
+				level3: {
+					label: '在生者传记中加入当事人未公开的个人信息等隐私',
+					summary: '警告：在生者传记中加入当事人未公开的个人信息等隐私'
+				},
+				level4: {
+					label: '加入恶俗内容',
+					summary: '最后警告：加入恶俗内容'
+				},
+				level4im: {
+					label: '加入恶俗内容',
+					summary: '唯一警告：加入恶俗内容'
+				}
+			},
 		},
 		'翻译品质': {
 			'uw-roughtranslation': {
