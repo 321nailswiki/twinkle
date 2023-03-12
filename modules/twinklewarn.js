@@ -675,7 +675,7 @@ Twinkle.warn.messages = wgULS({
 					label: '加入恶俗内容',
 					summary: '唯一警告：加入恶俗内容'
 				}
-			},
+			}
 		},
 		'翻译品质': {
 			'uw-roughtranslation': {
